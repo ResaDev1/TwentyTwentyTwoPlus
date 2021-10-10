@@ -1,1 +1,1 @@
-# twentytwentytwoplus Plugin
+# TwentyTwentyTwoPlus Plugin
