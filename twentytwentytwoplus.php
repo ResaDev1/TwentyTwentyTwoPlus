@@ -10,19 +10,21 @@
     * License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
 
+declare(strict_types=1);
+
 /**
  * Enject style
  * @since 0.0.1
  */
-function enject_style($style_name, $css_file_path) {
+function enject_style(string $style_name, string $css_file_path): void {
     wp_enqueue_style( $style_name, $css_file_path );
 }
-add_action( 'wp_enqueue_scripts', 'enject_style' );
 
 /**
- * When plugin activated.
+ * When plugin activated,
+ * This function runs.
  */
-function plugin_activated() {
+function main() {
     // Get plugin dir url
     $dir = plugin_dir_url(__FILE__);
 
@@ -30,6 +32,10 @@ function plugin_activated() {
     enject_style('TwentyTwentyTwoPlusStyle', $dir . 'css/style.css');
 }
 
-register_activation_hook( __FILE__, 'plugin_activated' );
+// Runs event enject action
+add_action( 'wp_enqueue_scripts', 'main' );
+
+// Plugin activated event
+register_activation_hook( __FILE__, 'main' );
 
 ?>
