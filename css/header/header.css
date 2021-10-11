@@ -1,0 +1,30 @@
+/*
+    Theme header section styles
+*/
+
+@import 'menu.css';
+
+/*
+    Header
+*/
+body .wp-site-blocks header {
+    height: 4rem;
+    box-shadow: 0 7px 8px 0 rgb(0 0 0 / 4%);
+    background: #fff;
+}
+
+/*
+    Header body
+*/
+body .wp-site-blocks header .wp-block-group {
+    padding-top: 0 !important;
+}
+
+/*
+    Mobile screen size
+*/
+@media screen and (max-width: 581px) {
+    body .wp-site-blocks header .wp-block-group {
+        padding-top: 0.6rem !important;
+    }
+}

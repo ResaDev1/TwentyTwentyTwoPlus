@@ -1,0 +1,14 @@
+/*
+    Theme footer section styles
+*/
+
+body .wp-site-blocks footer {
+    background-color: #fff;
+}
+
+/*
+    Footer inner div
+*/
+body .wp-site-blocks footer div {
+    padding: 4rem !important;
+}

@@ -1,0 +1,12 @@
+/*
+    Header menu section
+*/
+
+/* Menu ( Pages List ) */
+.wp-block-page-list {}
+
+/* Menu Items */
+.wp-block-page-list li:hover {
+    border-bottom: solid 2px red;
+    margin-bottom: -2px;
+}
