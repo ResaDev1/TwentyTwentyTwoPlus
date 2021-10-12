@@ -13,14 +13,22 @@
 
 declare(strict_types=1);
 
+include 'log.php';
+
 // Get plugin dir url
 $dir = plugin_dir_url(__FILE__);
+
+// Create Log object
+$log = new Log();
+
+const INFO = "INFO";
 
 /**
  * Register Menu
  */
 function register_menu(): void {
-    global $dir, $menu_page;
+    global $log;
+
     /**
      * Code refrence: https://developer.wordpress.org/reference/functions/add_menu_page/
      */
@@ -32,6 +40,7 @@ function register_menu(): void {
         '', 
         90 
     );
+    $log->push(INFO, "Menu created.");
 }
 add_action( 'admin_menu', 'register_menu' );
 
@@ -40,7 +49,12 @@ add_action( 'admin_menu', 'register_menu' );
  * include Menu file to show plugin panel page
  */
 function menu_page() {
-    include_once plugin_dir_path( __FILE__ ) . 'menu.php';
+    global $log;
+
+    $file_name = "menu.php";
+    include_once plugin_dir_path( __FILE__ ) . $file_name;
+
+    $log->push(INFO, "File loaded -> " . $file_name);
 }
 
 /**
@@ -65,7 +79,18 @@ function main() {
 // Runs event enject action
 add_action( 'wp_enqueue_scripts', 'main' );
 
+$log->push(INFO, "Style injected.");
+
 // Plugin activated event
 register_activation_hook( __FILE__, 'main' );
+
+/**
+ * Returns array of logs
+ */
+function get_logs(): array {
+    global $log;
+
+    return $log->messages;
+}
 
 ?>
