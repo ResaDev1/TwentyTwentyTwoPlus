@@ -6,6 +6,7 @@
 
 @import './header/header.css';
 @import './footer.css';
+@import './main.css';
 
 /* Variables */
 :root {
@@ -20,4 +21,4 @@ body {
 /*
     Theme blocks kind of ( body )
 */
-body .wp-site-blocks {}
+/* body .wp-site-blocks {} */

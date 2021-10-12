@@ -10,10 +10,42 @@
     * License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
 
+
 declare(strict_types=1);
+
+// Get plugin dir url
+$dir = plugin_dir_url(__FILE__);
+
+/**
+ * Register Menu
+ */
+function register_menu(): void {
+    global $dir, $menu_page;
+    /**
+     * Code refrence: https://developer.wordpress.org/reference/functions/add_menu_page/
+     */
+    add_menu_page( 'Twenty Twenty Plus', 
+        'TwTP', 
+        'manage_options', 
+        'twenty-twenty-two-plus-menu', 
+        'menu_page', 
+        '', 
+        90 
+    );
+}
+add_action( 'admin_menu', 'register_menu' );
+
+/**
+ * Menu page
+ * include Menu file to show plugin panel page
+ */
+function menu_page() {
+    include_once plugin_dir_path( __FILE__ ) . 'menu.php';
+}
 
 /**
  * Enject style
+ * Enqueue Css to theme
  * @since 0.0.1
  */
 function enject_style(string $style_name, string $css_file_path): void {
@@ -25,9 +57,7 @@ function enject_style(string $style_name, string $css_file_path): void {
  * This function runs.
  */
 function main() {
-    // Get plugin dir url
-    $dir = plugin_dir_url(__FILE__);
-
+    global $dir;
     // Enject css to theme
     enject_style('TwentyTwentyTwoPlusStyle', $dir . 'css/style.css');
 }
