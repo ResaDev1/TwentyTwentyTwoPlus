@@ -1,0 +1,29 @@
+/*
+    Theme main section styles
+*/
+
+/* body .wp-site-blocks main {} */
+
+/*
+    TODO: Fixe this section bug
+*/
+body .wp-site-blocks main ul li {
+    background: #fff;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 0 5px #0d0d0d40;
+}
+
+/*
+    Fixe bug
+*/
+.wp-block-post-template.is-flex-container li, .wp-block-query-loop.is-flex-container li {
+    margin-right: 0 !important;
+}
+
+/*
+    Fixe bug
+*/
+.wp-block-post-template.is-flex-container.is-flex-container.columns-3>li, .wp-block-query-loop.is-flex-container.is-flex-container.columns-3>li {
+    width: 100% !important;
+}
