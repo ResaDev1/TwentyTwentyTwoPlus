@@ -1,4 +1,4 @@
 # TwentyTwentyTwoPlus Plugin
 
 # TODO
-[ ] Plugin control panel
+- [ ] Plugin control panel
