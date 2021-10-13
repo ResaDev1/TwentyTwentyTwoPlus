@@ -1,0 +1,28 @@
+/*
+    Woocommerce product styles
+*/
+
+.woocommerce-page ul.products li.product {
+    padding: 1rem !important;
+    margin-bottom: 10rem !important;
+    transition: all 0.3s;
+}
+
+.woocommerce-page ul.products li.product:hover {
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+    margin-top: -3px;
+    margin-bottom: 3px !important;
+}
+
+.woocommerce-page ul.products li.product .woocommerce-LoopProduct-link img {
+    height: 10rem;
+    object-fit: fill;
+}
+
+.woocommerce #respond input#submit, .woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+    width: calc(100% - 32px);
+    font-size: 0.9rem !important;
+    text-align: center;
+}

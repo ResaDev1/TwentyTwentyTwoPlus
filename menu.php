@@ -11,14 +11,18 @@
         <button onclick="toggleLogs()">Logs</button>
         
         <textarea name="Logs" id="Logs" cols="60" rows="10" dir="ltr" class="hidden">
-            Logs
             <?php
                 $messages = get_logs();
                 foreach ($messages as $message) {
                     echo $message . "\n";
                 }
-            ?>
+                ?>
         </textarea>
+
+        <form>
+            <label for="theme-color">رنگ پوسته :</label>
+            <input type="text">
+        </form>
     </div>
     <script>
         function toggleLogs() {

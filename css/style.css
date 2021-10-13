@@ -7,15 +7,30 @@
 @import './header/header.css';
 @import './footer.css';
 @import './main.css';
+@import './woocommerce/woocommerce.css';
+
+/*
+    Import fonts
+*/
+@font-face {
+    font-family: 'Yekan';
+    src: url('https://cdn.cleveraj.net/fonts/WebYekan.eot');
+    src: url('https://cdn.cleveraj.net/fonts/WebYekan.eot?#iefix') format('embedded-opentype'),
+         url('https://cdn.cleveraj.net/fonts/WebYekan.woff') format('woff'),
+         url('https://cdn.cleveraj.net/fonts/WebYekan.ttf') format('truetype'),
+         url('https://cdn.cleveraj.net/fonts/WebYekan.svg#WebYekan') format('svg');
+}
 
 /* Variables */
 :root {
     --theme--body--background: #f5f5f5;
+    --theme--font: "Yekan", Tahoma;
 }
 
 body {
     margin: 0;
     background-color: var(--theme--body--background);
+    font-family: var(--theme--font);
 }
 
 /*

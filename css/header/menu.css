@@ -3,10 +3,10 @@
 */
 
 /* Menu ( Pages List ) */
-.wp-block-page-list {}
+/* .wp-block-page-list {} */
 
 /* Menu Items */
-.wp-block-page-list li:hover {
+.wp-block-navigation__responsive-container-content ul li:hover {
     border-bottom: solid 2px red;
     margin-bottom: -2px;
 }

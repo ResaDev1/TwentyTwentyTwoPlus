@@ -7,22 +7,30 @@
 /*
     TODO: Fixe this section bug
 */
-body .wp-site-blocks main ul li {
-    background: #fff;
+body .wp-site-blocks main .wp-block-post-template li {
+    /* background: #fff; */
     padding: 10px;
-    border-radius: 6px;
-    box-shadow: 0 0 5px #0d0d0d40;
+    /* border-radius: 6px; */
+    /* box-shadow: 0 0 5px #0d0d0d40; */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.377);
 }
 
 /*
-    Fixe bug
+    Remove last item border
+*/
+body .wp-site-blocks main ul li:last-child {
+    border: none;
+}
+
+/*
+    Fixes bug
 */
 .wp-block-post-template.is-flex-container li, .wp-block-query-loop.is-flex-container li {
     margin-right: 0 !important;
 }
 
 /*
-    Fixe bug
+    Fixes bug
 */
 .wp-block-post-template.is-flex-container.is-flex-container.columns-3>li, .wp-block-query-loop.is-flex-container.is-flex-container.columns-3>li {
     width: 100% !important;
