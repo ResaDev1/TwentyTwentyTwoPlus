@@ -4,7 +4,7 @@
 - [ ] Plugin control panel
 
 
-# Classes
+# Css classes
 
 ``` .box-br-s ``` [ Box ] -> Border radius and shadow
 
