@@ -33,7 +33,13 @@ body {
     font-family: var(--theme--font);
 }
 
-/*
-    Theme blocks kind of ( body )
-*/
-/* body .wp-site-blocks {} */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--theme--font);
+}
+
+.box-rs {
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0 0 5px #7d7d7d40;
+    border-radius: 16px;
+}

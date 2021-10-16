@@ -4,20 +4,20 @@
 
 .woocommerce-page ul.products li.product {
     padding: 1rem !important;
-    margin-bottom: 10rem !important;
+    /* margin-bottom: 10rem !important; */
     transition: all 0.3s;
 }
 
 .woocommerce-page ul.products li.product:hover {
     box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
-    margin-top: -3px;
-    margin-bottom: 3px !important;
+    /* margin-top: -3px;
+    margin-bottom: 3px !important; */
 }
-
+/* 
 .woocommerce-page ul.products li.product .woocommerce-LoopProduct-link img {
     height: 10rem;
     object-fit: fill;
-}
+} */
 
 .woocommerce #respond input#submit, .woocommerce a.button,
 .woocommerce button.button,
@@ -25,4 +25,36 @@
     width: calc(100% - 32px);
     font-size: 0.9rem !important;
     text-align: center;
+}
+
+/*
+    Category blocks
+*/
+body .wp-site-blocks main .wp-block-product-category {
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%);
+    border-radius: 8px;
+}
+
+body .wp-site-blocks main .wp-block-product-category ul li {
+    margin: 10px;
+    padding: 10px;
+    max-width: 13rem !important;
+    transition: all 0.3s;
+}
+
+body .wp-site-blocks main .wp-block-product-category ul li a {
+    text-decoration: none;
+}
+
+body .wp-site-blocks main .wp-block-product-category ul li .wp-block-button a {
+    color: #515151;
+    background: #ebe9eb;
+    font-weight: 700;
+}
+
+body .wp-site-blocks main .wp-block-product-category ul li:hover {
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+    /* margin-top: -10px; */
+    /* margin-bottom: 20px !important; */
 }

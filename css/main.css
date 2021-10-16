@@ -16,9 +16,9 @@ body .wp-site-blocks main .wp-block-post-template li {
 }
 
 /*
-    Remove last item border
+    Remove posts last item border
 */
-body .wp-site-blocks main ul li:last-child {
+body .wp-site-blocks main ul .post:last-child {
     border: none;
 }
 
@@ -34,4 +34,11 @@ body .wp-site-blocks main ul li:last-child {
 */
 .wp-block-post-template.is-flex-container.is-flex-container.columns-3>li, .wp-block-query-loop.is-flex-container.is-flex-container.columns-3>li {
     width: 100% !important;
+}
+
+@media (min-width: 782px) {
+    .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:first-child) {
+        margin-left: 0 !important;
+        margin-inline-start: var(--wp--style--block-gap,2em);
+    }
 }

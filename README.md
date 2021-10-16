@@ -3,6 +3,11 @@
 # TODO
 - [ ] Plugin control panel
 
+
+# Classes
+
+``` .box-br-s ``` [ Box ] -> Border radius and shadow
+
 # Plugin
 ```
 /**
