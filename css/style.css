@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--theme--font);
 }
 
-.box-rs {
+.box-br-s {
     overflow: hidden;
     display: flex;
     box-shadow: 0 0 5px #7d7d7d40;
