@@ -14,6 +14,7 @@
 declare(strict_types=1);
 
 include 'log.php';
+include 'version.php';
 
 // Get plugin dir url
 $dir = plugin_dir_url(__FILE__);
@@ -91,6 +92,10 @@ function get_logs(): array {
     global $log;
 
     return $log->messages;
+}
+
+function get_plugin_version(): string {
+    return plugin_version;
 }
 
 ?>
