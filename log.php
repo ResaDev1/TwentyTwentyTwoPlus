@@ -16,6 +16,7 @@ class Log {
 
     /**
      * Push message to log
+     * @since 0.0.1
      */
     public function push(string $status, string $message): void {
         // Generate message an push to messages array
