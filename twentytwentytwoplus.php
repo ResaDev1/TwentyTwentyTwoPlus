@@ -15,6 +15,7 @@ declare(strict_types=1);
 
 include 'log.php';
 include 'version.php';
+include 'db.php';
 
 // Get plugin dir url
 $dir = plugin_dir_url(__FILE__);
@@ -23,9 +24,12 @@ $dir = plugin_dir_url(__FILE__);
 $log = new Log();
 
 const INFO = "INFO";
+const DB_TABLE = "tttp";
 
 /**
  * Register Menu
+ * @return void
+ * @since 0.0.1
  */
 function register_menu(): void {
     global $log;
@@ -33,13 +37,13 @@ function register_menu(): void {
     /**
      * Code refrence: https://developer.wordpress.org/reference/functions/add_menu_page/
      */
-    add_menu_page( 'Twenty Twenty Plus', 
-        'TwTP', 
-        'manage_options', 
-        'twenty-twenty-two-plus-menu', 
-        'menu_page', 
-        '', 
-        90 
+    add_menu_page( 'Twenty Twenty Plus',
+        'TwTP',
+        'manage_options',
+        'twenty-twenty-two-plus-menu',
+        'menu_page',
+        '',
+        90
     );
     $log->push(INFO, "Menu created.");
 }
@@ -48,8 +52,9 @@ add_action( 'admin_menu', 'register_menu' );
 /**
  * Menu page
  * include Menu file to show plugin panel page
+ * @return void
  */
-function menu_page() {
+function menu_page(): void {
     global $log;
 
     $file_name = "menu.php";
@@ -61,6 +66,7 @@ function menu_page() {
 /**
  * Enject style
  * Enqueue Css to theme
+ * @return void
  * @since 0.0.1
  */
 function enject_style(string $style_name, string $css_file_path): void {
@@ -70,9 +76,23 @@ function enject_style(string $style_name, string $css_file_path): void {
 /**
  * When plugin activated,
  * This function runs.
+ * @since 0.0.1
  */
 function main() {
     global $dir;
+
+    // Create table in database
+	Db::create_table(DB_TABLE,
+		"
+            id INT PRIMARY KEY,
+			param VARCHAR(10),
+			value VARCHAR(10)
+		"
+	);
+
+    // Insert default items to db
+    Db::replace(DB_TABLE, array("id" => 0, "param" => "secondMenu", "value" => "false"), array("%s", "%s"));
+    
     // Enject css to theme
     enject_style('TwentyTwentyTwoPlusStyle', $dir . 'css/style.css');
 }
@@ -87,6 +107,8 @@ register_activation_hook( __FILE__, 'main' );
 
 /**
  * Returns array of logs
+ * @return array
+ * @since 0.0.1
  */
 function get_logs(): array {
     global $log;
@@ -94,8 +116,13 @@ function get_logs(): array {
     return $log->messages;
 }
 
+/**
+ * Returns current version of plugin
+ * @return string
+ * @since 0.0.1
+ */
 function get_plugin_version(): string {
-    return plugin_version;
+    return PLUGIN_VERSION;
 }
 
 ?>

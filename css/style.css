@@ -37,6 +37,13 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--theme--font);
 }
 
+/*
+    Custom classes
+*/
+
+/*
+    Add shadow and radius to box
+*/
 .box-br-s {
     overflow: hidden;
     display: flex;
