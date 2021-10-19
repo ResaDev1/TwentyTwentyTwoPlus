@@ -2,6 +2,8 @@
 
 # TODO
 - [ ] Plugin control panel
+- [ ] Dark theme
+- [ ] Second menu
 
 
 # Css classes
