@@ -40,7 +40,7 @@ function register_menu(): void {
     add_menu_page( 'Twenty Twenty Plus',
         'TwTP',
         'manage_options',
-        'twenty-twenty-two-plus-menu',
+        'tttp',
         'menu_page',
         '',
         90
