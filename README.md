@@ -17,7 +17,7 @@ Table name : wp_tttp
 | ------------- | ------------- | ------------- |
 | 0  | secondMenu  | true/false  |
 
-ID 0 : Activate second in menu
+ID 0 : Activate second menu in header
 # Plugin
 ```
 /**
