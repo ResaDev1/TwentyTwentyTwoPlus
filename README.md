@@ -10,6 +10,14 @@
 
 ``` .box-br-s ``` [ Box ] -> Border radius and shadow
 
+# Db table diagram
+Table name : wp_tttp
+
+| id | Param  | Value |
+| ------------- | ------------- | ------------- |
+| 0  | secondMenu  | true/false  |
+
+ID 0 : Activate second in menu
 # Plugin
 ```
 /**
