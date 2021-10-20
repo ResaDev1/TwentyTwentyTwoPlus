@@ -4,8 +4,16 @@
 
 .woocommerce-page ul.products li.product {
     padding: 1rem !important;
-    /* margin-bottom: 10rem !important; */
     transition: all 0.3s;
+    background-color: #fff;
+}
+
+/*
+    Product image
+*/
+.woocommerce-page ul.products li.product a img {
+    height: 11rem !important;
+    object-fit: contain; /* Fixe image bug */
 }
 
 .woocommerce-page ul.products li.product:hover {
@@ -57,4 +65,10 @@ body .wp-site-blocks main .wp-block-product-category ul li:hover {
     box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
     /* margin-top: -10px; */
     /* margin-bottom: 20px !important; */
+}
+
+@media only screen and (max-width: 768px) {
+    .woocommerce ul.products[class*=columns-] li.product, .woocommerce-page ul.products[class*=columns-] li.product {
+        width: calc(100% - 2rem) !important;
+    }
 }

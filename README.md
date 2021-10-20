@@ -1,7 +1,7 @@
 # TwentyTwentyTwoPlus Plugin
 
 # TODO
-- [ ] Plugin control panel
+- [x] Plugin control panel (beta!)
 - [ ] Dark theme
 - [ ] Second menu
 
