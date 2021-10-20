@@ -54,7 +54,7 @@
 
         .tttp-bottom-section {
             position: fixed;
-            bottom: 10px;
+            bottom: 3rem;
         }
 
         hr {
