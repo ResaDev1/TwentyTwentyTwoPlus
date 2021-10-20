@@ -89,9 +89,6 @@ function main() {
 			value VARCHAR(10)
 		"
 	);
-
-    // Insert default items to db
-    Db::replace(DB_TABLE, array("id" => 0, "param" => "secondMenu", "value" => "false"), array("%s", "%s"));
     
     // Enject css to theme
     enject_style('TwentyTwentyTwoPlusStyle', $dir . 'css/style.css');
