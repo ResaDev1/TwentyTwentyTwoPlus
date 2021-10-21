@@ -13,6 +13,7 @@ class Db {
 	 */
 	public static function create_table(string $name, string $options): void {
 		// Use Wordpress db var as global
+		// Code refrence : https://developer.wordpress.org/reference/classes/wpdb/
 		global $wpdb;
 		
 		$charset_collate = $wpdb->get_charset_collate();
