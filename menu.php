@@ -87,10 +87,15 @@
                             <?php 
                                 $results = Db::get("SELECT value FROM wp_tttp WHERE id=0;");
 
-                                echo match ($results[0]->value) {
-                                    "true" => '<input type="checkbox" name="checkSecondMenu" value="checked" checked>',
-                                    "false" => '<input type="checkbox" name="checkSecondMenu" value="checked">'
-                                };
+                                if (count($results) == null) {
+                                    echo '<input type="checkbox" name="checkSecondMenu" value="checked">';
+                                }
+                                else {
+                                    echo match ($results[0]->value) {
+                                        "true" => '<input type="checkbox" name="checkSecondMenu" value="checked" checked>',
+                                        "false" => '<input type="checkbox" name="checkSecondMenu" value="checked">'
+                                    };
+                                }
                             ?>
                         </td>
                     </tr>
