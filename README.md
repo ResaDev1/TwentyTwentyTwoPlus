@@ -1,10 +1,5 @@
 # TwentyTwentyTwoPlus Plugin
-
-# TODO
-- [x] Plugin control panel (beta!)
-- [ ] Dark theme
-- [ ] Second menu
-
+:)
 
 # Css classes
 
