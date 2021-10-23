@@ -4,7 +4,7 @@
 
 .woocommerce-page ul.products li.product {
     padding: 1rem !important;
-    transition: all 0.3s;
+    transition: all 0.2s;
     background-color: #fff;
     margin-left: -1px !important;
     border: 1px solid #ebebeb;
@@ -39,6 +39,7 @@
 .woocommerce-page ul.products li.product:hover {
     box-shadow: 0 2px 17px 0 rgb(0 0 0 / 9%);
     z-index: 10;
+    transform: translateY(-1px);
 }
 
 .woocommerce #respond input#submit, .woocommerce a.button,
@@ -77,8 +78,7 @@ body .wp-site-blocks main .wp-block-product-category ul li .wp-block-button a {
 
 body .wp-site-blocks main .wp-block-product-category ul li:hover {
     box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
-    /* margin-top: -10px; */
-    /* margin-bottom: 20px !important; */
+    background-color: red;
 }
 
 @media only screen and (max-width: 768px) {
