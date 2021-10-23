@@ -84,9 +84,9 @@ function main() {
     // Create table in database
 	Db::create_table(DB_TABLE,
 		"
-            id INT PRIMARY KEY,
-			param VARCHAR(10),
-			value VARCHAR(10)
+            id INT PRIMARY KEY AUTO_INCREMENT,
+			param VARCHAR(100),
+			value VARCHAR(200)
 		"
 	);
     
