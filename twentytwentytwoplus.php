@@ -91,7 +91,7 @@ function main() {
 	);
     
     // Enject css to theme
-    enject_style('TwentyTwentyTwoPlusStyle', $dir . 'css/style.css');
+    inject_style('TwentyTwentyTwoPlusStyle', $dir . 'css/style.css');
 }
 
 // Runs event enject action
@@ -121,5 +121,23 @@ function get_logs(): array {
 function get_plugin_version(): string {
     return PLUGIN_VERSION;
 }
+
+/**
+ * Check if dark mode enabled. then inject css
+ * @since 0.0.2
+ * @return void
+ */
+function dark_theme(): void {
+    global $dir;
+
+    $result = Db::get("SELECT value FROM wp_" . DB_TABLE . " WHERE param='darkMode'");
+    if ($result) {
+        // Inject dark theme css
+        if ($result[0]->value == "1") {
+            inject_style("TTTPDark", $dir . "css/dark-theme.css");
+        }
+    }
+}
+add_action( 'wp_enqueue_scripts', 'dark_theme' );
 
 ?>
