@@ -69,7 +69,7 @@ function menu_page(): void {
  * @return void
  * @since 0.0.1
  */
-function enject_style(string $style_name, string $css_file_path): void {
+function inject_style(string $style_name, string $css_file_path): void {
     wp_enqueue_style( $style_name, $css_file_path );
 }
 
