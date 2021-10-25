@@ -13,9 +13,9 @@
 
 declare(strict_types=1);
 
-include 'log.php';
-include 'version.php';
-include 'db.php';
+include 'php/log.php';
+include 'php/version.php';
+include 'php/db.php';
 
 // Get plugin dir url
 $dir = plugin_dir_url(__FILE__);
