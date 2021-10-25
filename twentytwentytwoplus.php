@@ -91,7 +91,7 @@ function main() {
 	);
     
     // Enject css to theme
-    inject_style('TwentyTwentyTwoPlusStyle', $dir . 'css/style.css');
+    inject_style('TwentyTwentyTwoPlusStyle', $dir . 'dist/main.bundle.css');
 }
 
 // Runs event enject action
