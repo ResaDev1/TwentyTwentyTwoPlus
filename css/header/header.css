@@ -10,7 +10,7 @@
 body .wp-site-blocks header {
     height: 4rem;
     box-shadow: 0 7px 8px 0 rgb(0 0 0 / 4%);
-    background: #fff;
+    background: var(--wp--preset--color--header--background);
     display: flex;
 }
 
