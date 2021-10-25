@@ -1,5 +1,5 @@
 # TwentyTwentyTwoPlus Plugin
-:)
+A better version of wordpress twentytwentytwo theme, maybe :)
 
 # Css classes
 
