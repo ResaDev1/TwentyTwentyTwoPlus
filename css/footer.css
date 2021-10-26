@@ -3,7 +3,7 @@
 */
 
 body .wp-site-blocks footer {
-    background-color: var(--wp--preset--color--footer--background);
+    background-color: var(--wp--preset--color--block--background);
 }
 
 /*

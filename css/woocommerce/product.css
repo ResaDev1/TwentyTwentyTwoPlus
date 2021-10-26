@@ -5,7 +5,7 @@
 .woocommerce-page ul.products li.product {
     padding: 1rem !important;
     transition: all 0.2s;
-    background-color: var(--wp--wc--product--color--background);
+    background-color: var(--wp--preset--color--block--background);
     margin-left: -1px !important;
     border: var(--wp--wc--product--border);
 }
@@ -42,7 +42,8 @@
     transform: translateY(-1px);
 }
 
-.woocommerce #respond input#submit, .woocommerce a.button,
+.woocommerce #respond input#submit,
+.woocommerce a.button,
 .woocommerce button.button,
 .woocommerce input.button {
     width: calc(100% - 32px);
@@ -82,7 +83,8 @@ body .wp-site-blocks main .wp-block-product-category ul li:hover {
 }
 
 @media only screen and (max-width: 768px) {
-    .woocommerce ul.products[class*=columns-] li.product, .woocommerce-page ul.products[class*=columns-] li.product {
+    .woocommerce ul.products[class*="columns-"] li.product,
+    .woocommerce-page ul.products[class*="columns-"] li.product {
         width: calc(100% - 2rem) !important;
     }
 }

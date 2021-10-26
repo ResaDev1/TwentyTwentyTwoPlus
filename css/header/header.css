@@ -2,7 +2,7 @@
     Theme header section styles
 */
 
-@import 'menu.css';
+@import "menu.css";
 
 /*
     Header
@@ -10,7 +10,7 @@
 body .wp-site-blocks header {
     height: 4rem;
     box-shadow: 0 7px 8px 0 rgb(0 0 0 / 4%);
-    background: var(--wp--preset--color--header--background);
+    background: var(--wp--preset--color--block--background);
     display: flex;
 }
 
@@ -19,7 +19,7 @@ body .wp-site-blocks header {
 */
 body .wp-site-blocks header .wp-block-group {
     padding: 0 !important;
-    
+
     /* Add space between first item and other items (from right) */
     flex: 1;
 }

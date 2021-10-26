@@ -1,6 +1,11 @@
-
-@import './product.css';
+@import "./product.css";
+@import "./checkout.css";
 
 body .wp-site-blocks main .entry-content .woocommerce {
     max-width: 1000px !important;
+}
+
+.select2-container--default .select2-selection--single {
+    background: none !important;
+    border: solid 1px #7d7d7d7d !important;
 }
