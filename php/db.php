@@ -75,6 +75,21 @@ class Db {
 
 		return $result;
 	}
+
+	/**
+	 * Update data in table
+	 * @since 0.0.2
+	 * @return void
+	 */
+	public static function update(string $table_name, array $data, array $where): void {
+		global $wpdb;
+
+		// get table
+		$table = $wpdb->prefix . $table_name;
+		
+		// Update data
+		$wpdb->update($table, $data, $where);
+	}
 }
 
 ?>

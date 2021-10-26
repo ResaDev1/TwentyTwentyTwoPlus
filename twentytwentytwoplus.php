@@ -13,9 +13,9 @@
 
 declare(strict_types=1);
 
-include 'log.php';
-include 'version.php';
-include 'db.php';
+include 'php/log.php';
+include 'php/version.php';
+include 'php/db.php';
 
 // Get plugin dir url
 $dir = plugin_dir_url(__FILE__);
@@ -69,7 +69,7 @@ function menu_page(): void {
  * @return void
  * @since 0.0.1
  */
-function enject_style(string $style_name, string $css_file_path): void {
+function inject_style(string $style_name, string $css_file_path): void {
     wp_enqueue_style( $style_name, $css_file_path );
 }
 
@@ -84,14 +84,14 @@ function main() {
     // Create table in database
 	Db::create_table(DB_TABLE,
 		"
-            id INT PRIMARY KEY,
-			param VARCHAR(10),
-			value VARCHAR(10)
+            id INT PRIMARY KEY AUTO_INCREMENT,
+			param VARCHAR(100),
+			value VARCHAR(200)
 		"
 	);
     
     // Enject css to theme
-    enject_style('TwentyTwentyTwoPlusStyle', $dir . 'css/style.css');
+    inject_style('TwentyTwentyTwoPlusStyle', $dir . 'dist/main.bundle.css');
 }
 
 // Runs event enject action
@@ -121,5 +121,35 @@ function get_logs(): array {
 function get_plugin_version(): string {
     return PLUGIN_VERSION;
 }
+
+/**
+ * Check if dark mode enabled. then inject css
+ * @since 0.0.2
+ * @return void
+ */
+function dark_theme(): void {
+    global $dir;
+
+    $result = Db::get("SELECT value FROM wp_" . DB_TABLE . " WHERE param='darkMode'");
+    if ($result) {
+        // Inject dark theme css
+        if ($result[0]->value == "1") {
+            inject_style("TTTPDark", $dir . "css/dark-theme.css");
+        }
+    }
+}
+add_action( 'wp_enqueue_scripts', 'dark_theme' );
+
+/**
+ * Inject javascript to theme
+ * @since 0.0.2
+ * @return void
+ */
+function inject_script(): void {
+    global $dir;
+    
+    wp_enqueue_script('script', $dir . 'dist/bundle.js');
+}
+add_action('wp_enqueue_scripts', 'inject_script');
 
 ?>

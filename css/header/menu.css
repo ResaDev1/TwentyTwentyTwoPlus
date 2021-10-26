@@ -10,3 +10,12 @@
     border-bottom: solid 2px red;
     margin-bottom: -2px;
 }
+
+/*
+    Mobile menu
+*/
+.wp-block-navigation:not(.has-background)
+    .wp-block-navigation__responsive-container.is-menu-open {
+    color: var(--wp--preset--color--foreground);
+    background: var(--wp--preset--color--background) !important;
+}

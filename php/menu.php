@@ -1,21 +1,48 @@
 <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST")
-    {
-        $result = 0;
-
-        if (isset($_POST["checkSecondMenu"])) {
-            $result = 1;
+    /**
+     * Set OR replace boolean to db
+     * @since 0.0.2
+     * @return void
+     */
+    function set_bool(string $param) {
+        $data = Db::get("SELECT value FROM wp_tttp WHERE param='$param';");
+        // If data exists
+        if ($data) {
+            $value = isset($_POST["$param"]);
+            Db::update(DB_TABLE, array("value" => $value), array("param" => $param));
         }
         else {
-            $result = 0;
+            Db::insert(DB_TABLE, array("param" => $param, "value" => ""), array("%s", "%s"));
         }
-
-        match ($result) {
-            0 => Db::replace(DB_TABLE, array("id" => 0, "param" => "secondMenu", "value" => "false"), array("%s", "%s")),
-            1 => Db::replace(DB_TABLE, array("id" => 0, "param" => "secondMenu", "value" => "true"), array("%s", "%s")),
-        };
     }
 
+    /**
+     * Get boolean from db
+     * @since 0.0.2
+     * @return string
+     */
+    function get_bool(string $param): string {
+        $result = Db::get("SELECT value FROM wp_tttp WHERE param='$param';");
+
+        if ($result) {
+            return match ($result[0]->value) {
+                "1"  => 'checked',
+                "" => '',
+            };
+        }
+        else {
+            return '';
+        }
+    }
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST")
+    {
+        set_bool("checkSecondMenu");
+        set_bool("darkMode");
+    }
+
+    $second_menu = get_bool("checkSecondMenu");
+    $dark_mode = get_bool("darkMode");
 ?>
 
 <html>
@@ -77,26 +104,18 @@
                 <tbody>
                     <tr>
                         <td>
-                            <div style="padding: 10px; display: flex; align-items: flex-end;">
-                                <label for="secondmenu">
-                                    فهرست دوم
-                                </label>
-                            </div>
+                            فهرست دوم
                         </td>
                         <td>
-                            <?php 
-                                $results = Db::get("SELECT value FROM wp_tttp WHERE id=0;");
-
-                                if (count($results) == null) {
-                                    echo '<input type="checkbox" name="checkSecondMenu" value="checked">';
-                                }
-                                else {
-                                    echo match ($results[0]->value) {
-                                        "true" => '<input type="checkbox" name="checkSecondMenu" value="checked" checked>',
-                                        "false" => '<input type="checkbox" name="checkSecondMenu" value="checked">'
-                                    };
-                                }
-                            ?>
+                            <input type="checkbox" name="checkSecondMenu" value="checked" <?= $second_menu ?>>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            حالت تاریک
+                        </td>
+                        <td>
+                            <input type="checkbox" name="darkMode" value="checked" <?= $dark_mode ?>>
                         </td>
                     </tr>
                 </tbody>
