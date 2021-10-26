@@ -1,6 +1,15 @@
 # TwentyTwentyTwoPlus Plugin
 A better version of wordpress twentytwentytwo theme, maybe :)
 
+# Build project
+install Dependencies
+
+``` npm i ```
+
+Build
+
+``` npm run buildw ```
+
 # Css classes
 
 ``` .box-br-s ``` [ Box ] -> Border radius and shadow
