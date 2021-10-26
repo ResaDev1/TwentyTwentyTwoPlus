@@ -9,3 +9,10 @@ body .wp-site-blocks main .entry-content .woocommerce {
     background: none !important;
     border: solid 1px #7d7d7d7d !important;
 }
+
+.woocommerce-info,
+.woocommerce-error,
+.woocommerce-message {
+    background: var(--wp--preset--color--background) !important;
+    color: var(--wp--preset--color--foreground) !important;
+}

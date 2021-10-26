@@ -2,12 +2,6 @@
     Woocommerce
 */
 
-.woocommerce-info,
-.woocommerce-error {
-    background: var(--wp--preset--color--background) !important;
-    color: var(--wp--preset--color--foreground) !important;
-}
-
 .woocommerce-checkout-payment {
     background: var(--wp--preset--color--block--background) !important;
 }
