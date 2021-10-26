@@ -140,4 +140,16 @@ function dark_theme(): void {
 }
 add_action( 'wp_enqueue_scripts', 'dark_theme' );
 
+/**
+ * Inject javascript to theme
+ * @since 0.0.2
+ * @return void
+ */
+function inject_script(): void {
+    global $dir;
+    
+    wp_enqueue_script('script', $dir . 'dist/bundle.js');
+}
+add_action('wp_enqueue_scripts', 'inject_script');
+
 ?>
