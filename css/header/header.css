@@ -3,6 +3,7 @@
 */
 
 @import "menu.css";
+@import "nav.css";
 
 /*
     Header
@@ -17,7 +18,7 @@ body .wp-site-blocks header {
 /*
     Header body
 */
-body .wp-site-blocks header .wp-block-group {
+body .wp-site-blocks header .wp-block-group.alignwide {
     padding: 0 !important;
 
     /* Add space between first item and other items (from right) */
