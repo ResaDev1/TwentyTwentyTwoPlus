@@ -57,7 +57,7 @@ add_action( 'admin_menu', 'register_menu' );
 function menu_page(): void {
     global $log;
 
-    $file_name = "menu.php";
+    $file_name = "php/menu.php";
     include_once plugin_dir_path( __FILE__ ) . $file_name;
 
     $log->push(INFO, "File loaded -> " . $file_name);
