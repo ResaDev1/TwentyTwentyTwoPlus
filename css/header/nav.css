@@ -9,6 +9,7 @@
         position: fixed;
         right: -13rem;
         transition: all 0.3s;
+        justify-content: flex-start;
     }
 
     .wp-site-blocks div.wp-block-navigation__responsive-container.is-menu-open {
@@ -22,6 +23,11 @@
 
     .wp-site-blocks div.wp-block-navigation__responsive-container ul {
         align-items: flex-start !important;
+    }
+
+    .wp-block-navigation__responsive-container.is-menu-open
+        .wp-block-navigation__responsive-container-content {
+        justify-content: flex-start;
     }
 }
 
