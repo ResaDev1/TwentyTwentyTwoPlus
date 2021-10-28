@@ -243,6 +243,11 @@ td {
     border-color: #7d7d7d7d !important;
 }
 
+.wp-block-post-title {
+    margin-top: 3rem !important;
+    margin-bottom: 0 !important;
+}
+
 /*
     Custom classes
 */
