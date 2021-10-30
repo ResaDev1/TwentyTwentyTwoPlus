@@ -1,6 +1,6 @@
 /*
     * TwentyTwentyTwoPlus Main Style
-    * Version: 0.0.1
+    * Version: 0.1.0
     * ResaDev team
 */
 
@@ -241,6 +241,11 @@ tr,
 th,
 td {
     border-color: #7d7d7d7d !important;
+}
+
+.wp-block-post-title {
+    margin-top: 3rem !important;
+    margin-bottom: 0 !important;
 }
 
 /*
