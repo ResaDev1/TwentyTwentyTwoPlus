@@ -17,3 +17,7 @@ body .wp-site-blocks main .entry-content .woocommerce {
     background: var(--wp--preset--color--background) !important;
     color: var(--wp--preset--color--foreground) !important;
 }
+
+.woocommerce .wp-block-spacer {
+    height: 0 !important;
+}
