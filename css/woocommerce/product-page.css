@@ -7,10 +7,23 @@
     border-radius: 4px;
 }
 
+.woocommerce div.product .woocommerce-product-gallery {
+    box-shadow: 0 0 5px #cccccc7d;
+}
+
 @media (min-width: 752px) {
     .woocommerce div.product .woocommerce-product-gallery {
         width: 40% !important;
     }
+}
+
+.woocommerce div.product .summary .price {
+    display: flex;
+    flex-direction: column;
+}
+
+.woocommerce div.product .summary .price ins bdi {
+    font-size: 2rem;
 }
 
 .woocommerce div.product .woocommerce-tabs .wc-tabs li {
@@ -49,4 +62,10 @@
 
 .woocommerce .single-product .cart .quantity {
     margin-bottom: 1rem !important;
+}
+
+.woocommerce .single-product .cart button {
+    background-color: #77a464 !important;
+    padding: 1rem !important;
+    border-radius: 8px;
 }
