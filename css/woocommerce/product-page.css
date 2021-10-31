@@ -20,7 +20,7 @@
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
-    border-bottom: 1px solid red !important;
+    border-bottom: 1px solid #77a464 !important;
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active::before {
