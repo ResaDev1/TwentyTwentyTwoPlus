@@ -17,6 +17,10 @@
     }
 }
 
+.woocommerce div.product .summary .product_meta {
+    font-size: 14px;
+}
+
 .woocommerce div.product .summary .price {
     display: flex;
     flex-direction: column;
