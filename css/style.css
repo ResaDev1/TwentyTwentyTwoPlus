@@ -248,6 +248,10 @@ td {
     margin-bottom: 3rem !important;
 }
 
+ins {
+    text-decoration: none !important;
+}
+
 /*
     Custom classes
 */
