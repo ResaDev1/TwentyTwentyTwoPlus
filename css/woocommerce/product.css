@@ -28,6 +28,10 @@
     align-items: flex-end;
 }
 
+.woocommerce-page ul.products li.product .price ins bdi {
+    font-size: 1.3rem;
+}
+
 /*
     Product image
 */
