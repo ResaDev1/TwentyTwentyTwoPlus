@@ -127,21 +127,6 @@
     <hr>
     <div class="tttp-bottom-section">
         <p>نسخه : <?php echo get_plugin_version(); ?></p>
-        <button onclick="toggleLogs()">Logs</button>
     </div>
 
-    
-    <textarea name="Logs" id="Logs" cols="60" rows="10" dir="ltr" class="hidden">
-        <?php
-            $messages = get_logs();
-            foreach ($messages as $message) {
-                echo $message . "\n";
-            }
-        ?>
-    </textarea>
-    <script>
-        function toggleLogs() {
-            document.getElementById("Logs").classList.toggle('hidden');
-        }
-    </script>
 </html>
