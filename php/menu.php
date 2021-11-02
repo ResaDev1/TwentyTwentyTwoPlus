@@ -1,10 +1,10 @@
 <?php
     /**
-     * Set OR replace boolean to db
-     * @since 0.0.2
+     * Set OR replace checkbox value to db
+     * @since 0.1.0
      * @return void
      */
-    function set_bool(string $param) {
+    function set_checkbox(string $param) {
         $data = Db::get("SELECT value FROM wp_tttp WHERE param='$param';");
         // If data exists
         if ($data) {
@@ -17,11 +17,11 @@
     }
 
     /**
-     * Get boolean from db
-     * @since 0.0.2
+     * Get checkbox value from db
+     * @since 0.1.0
      * @return string
      */
-    function get_bool(string $param): string {
+    function get_checkbox(string $param): string {
         $result = Db::get("SELECT value FROM wp_tttp WHERE param='$param';");
 
         if ($result) {
@@ -37,12 +37,12 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
-        set_bool("checkSecondMenu");
-        set_bool("darkMode");
+        set_checkbox("checkSecondMenu");
+        set_checkbox("darkMode");
     }
 
-    $second_menu = get_bool("checkSecondMenu");
-    $dark_mode = get_bool("darkMode");
+    $second_menu = get_checkbox("checkSecondMenu");
+    $dark_mode = get_checkbox("darkMode");
 ?>
 
 <html>
