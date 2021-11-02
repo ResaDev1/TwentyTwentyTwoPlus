@@ -204,4 +204,19 @@ export class Switch {
     get getElement() {
         return this.element;
     }
+
+    /**
+     * Get Theme state
+     * See current theme
+     */
+    get getThemeState() {
+        return this.themeState;
+    }
+
+    /*
+     * Get theme state as stirng
+     */
+    get getThemeStateAsString() {
+        return themeStateToString(this.themeState);
+    }
 }
