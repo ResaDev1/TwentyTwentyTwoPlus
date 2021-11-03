@@ -2,6 +2,7 @@
 
 /**
  * db
+ * TODO: Needs clean code, wpdb var called in every function.
  */
 class Db {
 	

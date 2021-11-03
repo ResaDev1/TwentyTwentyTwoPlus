@@ -10,13 +10,25 @@
     border: var(--wp--wc--product--border);
 }
 
+.woocommerce-page ul.products li.product:hover {
+    box-shadow: 0 0 5px #7d7d7d7d;
+    z-index: 10;
+    transform: translateY(-1px);
+}
+
 /*
     Product on sale
 */
 .woocommerce-page ul.products li.product .onsale {
     border-radius: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    margin: 6px !important;
+    padding: 7px !important;
+    min-width: 1rem !important;
+    min-height: 0 !important;
+    line-height: 1 !important;
+    border-radius: 3px !important;
+    box-shadow: 0 0 5px #7d7d7d7d;
+    font-size: 13px;
 }
 
 /*
@@ -40,12 +52,6 @@
     object-fit: contain; /* Fixe image bug */
 }
 
-.woocommerce-page ul.products li.product:hover {
-    box-shadow: 0 0 5px #7d7d7d7d;
-    z-index: 10;
-    transform: translateY(-1px);
-}
-
 .woocommerce #respond input#submit,
 .woocommerce a.button,
 .woocommerce button.button,
@@ -58,32 +64,33 @@
 /*
     Category blocks
 */
-body .wp-site-blocks main .wp-block-product-category {
-    background-color: #fff;
+body .wp-site-blocks main .wc-block-grid {
+    background-color: var(--wp--preset--color--block--background);
     box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%);
     border-radius: 8px;
 }
 
-body .wp-site-blocks main .wp-block-product-category ul li {
+body .wp-site-blocks main .wc-block-grid ul li {
     margin: 10px;
     padding: 10px;
     max-width: 13rem !important;
     transition: all 0.3s;
 }
 
-body .wp-site-blocks main .wp-block-product-category ul li a {
+body .wp-site-blocks main .wc-block-grid ul li a {
     text-decoration: none;
 }
 
-body .wp-site-blocks main .wp-block-product-category ul li .wp-block-button a {
+body .wp-site-blocks main .wc-block-grid ul li .wp-block-button a {
     color: #515151;
     background: #ebe9eb;
     font-weight: 700;
 }
 
-body .wp-site-blocks main .wp-block-product-category ul li:hover {
-    box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
-    background-color: red;
+body .wp-site-blocks main .wc-block-grid ul li:hover {
+    box-shadow: 0 0 5px #7d7d7d7d;
+    z-index: 10;
+    transform: translateY(-1px);
 }
 
 @media only screen and (max-width: 768px) {

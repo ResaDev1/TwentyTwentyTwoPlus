@@ -38,6 +38,10 @@
     }
 }
 
+.woocommerce div.product .woocommerce-tabs .woocommerce-Tabs-panel--description p {
+    text-align: justify;
+}
+
 /*
  * Just effect to first .onsale
  */
@@ -48,6 +52,9 @@
     font-size: 13px;
 }
 
+.woocommerce div.product .summary .woocommerce-product-details__short-description {
+    text-align: justify;
+}
 /*
     Product tags
 */

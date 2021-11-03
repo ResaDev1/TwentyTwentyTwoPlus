@@ -1,6 +1,7 @@
 @import "./product.css";
 @import "./checkout.css";
 @import "./product-page.css";
+@import "./cart.css";
 
 body .wp-site-blocks main .entry-content .woocommerce {
     max-width: 1000px !important;

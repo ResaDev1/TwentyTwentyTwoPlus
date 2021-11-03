@@ -44,6 +44,6 @@ module.exports = (env) => {
         },
         resolve: {
             extensions: [".tsx", ".ts", ".js", ".css"],
-        },
+        }
     };
 };
