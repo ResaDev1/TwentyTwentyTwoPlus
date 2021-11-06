@@ -272,6 +272,13 @@ td {
 .wp-block-post-title {
     margin-top: 3rem !important;
     margin-bottom: 3rem !important;
+    font-size: 2rem!important;
+}
+
+@media (max-width: 782px) {
+    .wp-block-post-title {
+        font-size: 1.5rem!important;
+    }
 }
 
 ins {
