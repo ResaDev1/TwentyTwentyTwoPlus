@@ -12,7 +12,7 @@
 /*
     Import fonts
 */
-@font-face {
+/* @font-face {
     font-family: "Yekan";
     font-weight: normal;
 
@@ -31,7 +31,7 @@
     src: url("../assets/fonts/iranYekan.eot?#iefix") format("embedded-opentype"),
     url("../assets/fonts/iranYekan.woff") format("woff"),
     url("../assets/fonts/iranYekan.ttf") format("truetype");
-}
+} */
 
 @font-face {
     font-family: "Sans";
