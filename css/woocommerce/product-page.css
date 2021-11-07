@@ -46,10 +46,17 @@
  * Just effect to first .onsale
  */
 .single-product .woocommerce div.product > .onsale {
+    right: 3px;
+    top: 3px;
     border-radius: 0 !important;
-    top: 0 !important;
-    right: 0 !important;
-    font-size: 13px;
+    margin: 6px !important;
+    padding: 7px !important;
+    min-width: 1rem !important;
+    min-height: 0 !important;
+    line-height: 1 !important;
+    border-radius: 3px !important;
+    box-shadow: 0 0 5px #7d7d7d7d;
+    font-size: 15px;
 }
 
 .woocommerce div.product .summary .woocommerce-product-details__short-description {
@@ -113,4 +120,11 @@
     background: #77a464 !important;
     padding: 1rem !important;
     border-radius: 8px;
+}
+
+/*
+    Product image opened
+*/
+.woocommerce .pswp .pswp__bg {
+    opacity: 0.9 !important;
 }
