@@ -236,7 +236,7 @@ input,
 textarea,
 select {
     background: none;
-    border: 0.1rem solid #7d7d7d7d;
+    border: 0.1rem solid #7d7d7d29!important;
     color: var(--wp--preset--color--foreground);
     padding: 7px;
     border-radius: 2px;
