@@ -22,3 +22,7 @@ body .wp-site-blocks main .entry-content .woocommerce {
 .woocommerce .wp-block-spacer {
     height: 0 !important;
 }
+
+.woocommerce-message .wc-forward {
+    margin-bottom: 1rem !important;
+}
