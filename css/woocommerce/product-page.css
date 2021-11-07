@@ -38,8 +38,17 @@
     }
 }
 
+.woocommerce div.product .woocommerce-tabs h2 {
+        font-size: 3rem;
+}
+
 .woocommerce div.product .woocommerce-tabs .woocommerce-Tabs-panel--description p {
     text-align: justify;
+}
+
+.woocommerce div.product .woocommerce-tabs .woocommerce-Tabs-panel--description a {
+    color: var(--wp--preset--color--link); 
+    text-decoration: none;
 }
 
 /*
@@ -117,6 +126,7 @@
 }
 
 .woocommerce .single-product .cart button {
+    width: 100%;
     background: #77a464 !important;
     padding: 1rem !important;
     border-radius: 8px;
