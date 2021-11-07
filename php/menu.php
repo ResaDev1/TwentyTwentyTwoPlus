@@ -5,14 +5,16 @@
      * @return void
      */
     function set_checkbox(string $param) {
-        $data = Db::get("SELECT value FROM wp_tttp WHERE param='$param';");
+        global $db;
+
+        $data = $db->get("SELECT value FROM wp_tttp WHERE param='$param';");
         // If data exists
         if ($data) {
             $value = isset($_POST["$param"]);
-            Db::update(DB_TABLE, array("value" => $value), array("param" => $param));
+            $db->update(array("value" => $value), array("param" => $param));
         }
         else {
-            Db::insert(DB_TABLE, array("param" => $param, "value" => ""), array("%s", "%s"));
+            $db->insert(array("param" => $param, "value" => ""), array("%s", "%s"));
         }
     }
 
@@ -22,7 +24,9 @@
      * @return string
      */
     function get_checkbox(string $param): string {
-        $result = Db::get("SELECT value FROM wp_tttp WHERE param='$param';");
+        global $db;
+
+        $result = $db->get("SELECT value FROM wp_tttp WHERE param='$param';");
 
         if ($result) {
             return match ($result[0]->value) {

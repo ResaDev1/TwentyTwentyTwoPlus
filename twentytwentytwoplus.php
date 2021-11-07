@@ -22,6 +22,8 @@ $dir = plugin_dir_url(__FILE__);
 const INFO = "INFO";
 const DB_TABLE = "tttp";
 
+$db = new Db(DB_TABLE);
+
 /**
  * Register Menu
  * @return void
@@ -78,7 +80,6 @@ function main() {
 			value VARCHAR(200)
 		"
 	);
-    
     // Enject css to theme
     inject_style('TwentyTwentyTwoPlusStyle', $dir . 'dist/main.bundle.css');
 }
@@ -104,9 +105,9 @@ function get_plugin_version(): string {
  * @return void
  */
 function dark_theme(): void {
-    global $dir;
+    global $dir, $db;
 
-    $result = Db::get("SELECT value FROM wp_" . DB_TABLE . " WHERE param='darkMode'");
+    $result = $db->get("SELECT value FROM wp_" . DB_TABLE . " WHERE param='darkMode'");
     if ($result) {
         // Inject dark theme css
         if ($result[0]->value == "1") {
