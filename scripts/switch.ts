@@ -185,8 +185,8 @@ export class Switch {
     }
 
     /**
-     * @name createElement
-     * @description Create Switch element
+     * @name switchElement
+     * @description Returns Switch element
      */
     private switchElement(): Element {
         // Switch div
