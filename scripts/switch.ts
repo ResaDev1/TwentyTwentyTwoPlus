@@ -11,6 +11,19 @@ const DARK_MODE_SVG: string =
 const SYSTEM_MODE_SVG: string =
     '<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 15.31L23.31 12 20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69zM12 18V6c3.31 0 6 2.69 6 6s-2.69 6-6 6z"/></svg>';
 
+// Handle localstorage functions in Promise
+const asyncLocalStorage = {
+    setItem: (key: string, value: string) => {
+        return Promise.resolve().then(() => {
+            localStorage.setItem(key, value);
+        });
+    },
+    getItem: (key: string) => {
+        return Promise.resolve().then(() => {
+            return localStorage.getItem(key);
+        });
+    }
+};
 
 /**
  * @name clearInnerHTML
@@ -172,9 +185,11 @@ export class Switch {
                 break;
         }
 
-        localStorage.setItem("theme", resultSelection);
-
-        this.changeState(themeStateFromString(resultSelection));
+        // Resolve in parallel
+        Promise.all([
+            asyncLocalStorage.setItem("theme", resultSelection),
+            this.changeState(themeStateFromString(resultSelection))
+        ]);
     }
 
     /**
@@ -183,16 +198,18 @@ export class Switch {
      * @param state ThemeState , replace current theme
      * @returns void
      */
-    public changeState(state: ThemeState): void {
-        this.options.body.classList.replace(
-            themeStateToString(this.themeState),
-            themeStateToString(state)
-        );
-
-        this.themeState = state;
-
-        // Change changeState button icon
-        clearInnerHTML(this.element, returnSvg(state));
+    private changeState(state: ThemeState): Promise<void> {
+        return Promise.resolve().then(() => {
+            this.options.body.classList.replace(
+                themeStateToString(this.themeState),
+                themeStateToString(state)
+            );
+    
+            this.themeState = state;
+    
+            // Change changeState button icon
+            clearInnerHTML(this.element, returnSvg(state));
+        })
     }
 
     /**
