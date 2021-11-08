@@ -4,6 +4,8 @@
 
 body .wp-site-blocks footer {
     background-color: var(--wp--preset--color--block--background);
+    box-shadow: 0 0 5px 0 #7d7d7d56;
+    margin-top: 3rem;
 }
 
 body .wp-site-blocks footer a {
