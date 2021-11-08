@@ -11,6 +11,19 @@ const DARK_MODE_SVG: string =
 const SYSTEM_MODE_SVG: string =
     '<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 15.31L23.31 12 20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69zM12 18V6c3.31 0 6 2.69 6 6s-2.69 6-6 6z"/></svg>';
 
+
+/**
+ * @name clearInnerHTML
+ * @description Clears inner html of element and set some new data. 
+ * @param {Element} element target element
+ * @param {string} html for replace after clear
+ * @returns void
+ */
+function clearInnerHTML(element: Element, html: string): void {
+    element.innerHTML = "";
+    element.innerHTML = html;
+}
+
 /**
  * @enum
  */
@@ -141,7 +154,7 @@ export class Switch {
      *              Local storage.
      */
     public changeStateAuto(): void {
-        let resultSelection = "";
+        let resultSelection: string;
         switch (localStorage.getItem("theme")) {
             case "dark":
                 resultSelection = "light";
@@ -178,10 +191,8 @@ export class Switch {
 
         this.themeState = state;
 
-        // Clear button data
-        this.element.innerHTML = "";
-
-        this.element.innerHTML = returnSvg(state);
+        // Change changeState button icon
+        clearInnerHTML(this.element, returnSvg(state));
     }
 
     /**
