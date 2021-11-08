@@ -6,7 +6,14 @@
  */
 class Db {
 
+	/**
+	 * Table name for query
+	 */
 	private string $table_name;
+
+	/**
+	 * Wpdb object
+	 */
 	private $db;
 
 	/**
