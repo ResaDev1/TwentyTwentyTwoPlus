@@ -5,3 +5,7 @@
 .woocommerce-checkout-payment {
     background: var(--wp--preset--color--block--background) !important;
 }
+
+.woocommerce-checkout-payment .form-row button {
+    width: 100%;
+}

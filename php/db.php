@@ -2,9 +2,25 @@
 
 /**
  * db
+ * TODO: Needs clean code, wpdb var called in every function.
  */
 class Db {
-	
+
+	private string $table_name;
+	private $db;
+
+	/**
+	 * When object created
+	 * @param table
+	 * @since 0.1.0
+	 */
+	function __construct(string $table) {
+		global $wpdb;
+
+		$this->table_name = $table;
+		$this->db = $wpdb;
+	}
+
 	/**
 	 * Create a table
 	 * @param name Name of table
@@ -30,36 +46,33 @@ class Db {
 	
 	/**
 	 * Inserts to table
-	 * @param table_name Name of table
 	 * @param data data to insert
 	 * @return void
 	 * @since 0.0.1
+	 * @since 0.1.0 Code fixed
 	 */
-	public static function insert(string $table_name, array $data, array $format): void {
-		global $wpdb;
-
+	public function insert(array $data, array $format): void {
 		// get table
-		$table = $wpdb->prefix . $table_name;
+		$table = $this->db->prefix . $this->table_name;
 
 		// Insert to table
-		$wpdb->insert($table, $data, $format);
+		$this->db->insert($table, $data, $format);
 	}
 
 	/**
 	 * Replace to table
-	 * @param table_name Name of table
 	 * @param data data to replace
+	 * @param format format of data 
 	 * @return void
 	 * @since 0.0.1
+	 * @since 0.1.0 Code fixed
 	 */
-	public static function replace(string $table_name, array $data, array $format): void {
-		global $wpdb;
-
+	public function replace(array $data, array $format): void {
 		// get table
-		$table = $wpdb->prefix . $table_name;
+		$table = $this->db->prefix . $this->table_name;
 
 		// Replace data
-		$wpdb->replace($table, $data, $format);
+		$this->db->replace($table, $data, $format);
 	}
 
 	/**
@@ -67,28 +80,28 @@ class Db {
 	 * @param query
 	 * @return array|object|null
 	 * @since 0.0.1
+	 * @since 0.1.0 Code fixed
 	 */
-	public static function get(string $query) {
-		global $wpdb;
-
-		$result = $wpdb->get_results($query);
+	public function get(string $query) {
+		$result = $this->db->get_results($query);
 
 		return $result;
 	}
 
 	/**
 	 * Update data in table
+	 * @param data
+	 * @param where
 	 * @since 0.0.2
+	 * @since 0.1.0 Code fixed
 	 * @return void
 	 */
-	public static function update(string $table_name, array $data, array $where): void {
-		global $wpdb;
-
+	public function update(array $data, array $where): void {
 		// get table
-		$table = $wpdb->prefix . $table_name;
+		$table = $this->db->prefix . $this->table_name;
 		
 		// Update data
-		$wpdb->update($table, $data, $where);
+		$this->db->update($table, $data, $where);
 	}
 }
 

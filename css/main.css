@@ -45,3 +45,15 @@ body .wp-site-blocks main ul .post:last-child {
         margin-inline-start: var(--wp--style--block-gap, 2em);
     }
 }
+
+.comment-form .form-submit input[type=submit] {
+    width: 100% !important;
+}
+
+/*
+    Posts and Products comment section
+*/
+.wp-block-post-comments p.logged-in-as a, .wp-block-post-comments p.logged-in-as {
+    text-decoration: none;
+    color: var(--wp--preset--color--link);
+}

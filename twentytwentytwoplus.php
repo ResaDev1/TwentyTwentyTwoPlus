@@ -13,18 +13,16 @@
 
 declare(strict_types=1);
 
-include 'php/log.php';
 include 'php/version.php';
 include 'php/db.php';
 
 // Get plugin dir url
 $dir = plugin_dir_url(__FILE__);
 
-// Create Log object
-$log = new Log();
-
 const INFO = "INFO";
 const DB_TABLE = "tttp";
+
+$db = new Db(DB_TABLE);
 
 /**
  * Register Menu
@@ -32,8 +30,6 @@ const DB_TABLE = "tttp";
  * @since 0.0.1
  */
 function register_menu(): void {
-    global $log;
-
     /**
      * Code refrence: https://developer.wordpress.org/reference/functions/add_menu_page/
      */
@@ -45,7 +41,6 @@ function register_menu(): void {
         '',
         90
     );
-    $log->push(INFO, "Menu created.");
 }
 add_action( 'admin_menu', 'register_menu' );
 
@@ -55,12 +50,8 @@ add_action( 'admin_menu', 'register_menu' );
  * @return void
  */
 function menu_page(): void {
-    global $log;
-
     $file_name = "php/menu.php";
     include_once plugin_dir_path( __FILE__ ) . $file_name;
-
-    $log->push(INFO, "File loaded -> " . $file_name);
 }
 
 /**
@@ -89,7 +80,6 @@ function main() {
 			value VARCHAR(200)
 		"
 	);
-    
     // Enject css to theme
     inject_style('TwentyTwentyTwoPlusStyle', $dir . 'dist/main.bundle.css');
 }
@@ -97,21 +87,8 @@ function main() {
 // Runs event enject action
 add_action( 'wp_enqueue_scripts', 'main' );
 
-$log->push(INFO, "Style injected.");
-
 // Plugin activated event
 register_activation_hook( __FILE__, 'main' );
-
-/**
- * Returns array of logs
- * @return array
- * @since 0.0.1
- */
-function get_logs(): array {
-    global $log;
-
-    return $log->messages;
-}
 
 /**
  * Returns current version of plugin
@@ -128,9 +105,9 @@ function get_plugin_version(): string {
  * @return void
  */
 function dark_theme(): void {
-    global $dir;
+    global $dir, $db;
 
-    $result = Db::get("SELECT value FROM wp_" . DB_TABLE . " WHERE param='darkMode'");
+    $result = $db->get("SELECT value FROM wp_" . DB_TABLE . " WHERE param='darkMode'");
     if ($result) {
         // Inject dark theme css
         if ($result[0]->value == "1") {

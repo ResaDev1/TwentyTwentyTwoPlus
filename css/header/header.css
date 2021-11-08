@@ -23,4 +23,10 @@ body .wp-site-blocks header .wp-block-group.alignwide {
 
     /* Add space between first item and other items (from right) */
     flex: 1;
+
+    font-weight: normal;
+}
+
+body .wp-site-blocks header .wp-block-group.alignwide h1 a {
+    text-decoration: none;
 }

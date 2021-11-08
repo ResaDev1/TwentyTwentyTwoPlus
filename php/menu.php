@@ -1,28 +1,32 @@
 <?php
     /**
-     * Set OR replace boolean to db
-     * @since 0.0.2
+     * Set OR replace checkbox value to db
+     * @since 0.1.0
      * @return void
      */
-    function set_bool(string $param) {
-        $data = Db::get("SELECT value FROM wp_tttp WHERE param='$param';");
+    function set_checkbox(string $param) {
+        global $db;
+
+        $data = $db->get("SELECT value FROM wp_tttp WHERE param='$param';");
         // If data exists
         if ($data) {
             $value = isset($_POST["$param"]);
-            Db::update(DB_TABLE, array("value" => $value), array("param" => $param));
+            $db->update(array("value" => $value), array("param" => $param));
         }
         else {
-            Db::insert(DB_TABLE, array("param" => $param, "value" => ""), array("%s", "%s"));
+            $db->insert(array("param" => $param, "value" => ""), array("%s", "%s"));
         }
     }
 
     /**
-     * Get boolean from db
-     * @since 0.0.2
+     * Get checkbox value from db
+     * @since 0.1.0
      * @return string
      */
-    function get_bool(string $param): string {
-        $result = Db::get("SELECT value FROM wp_tttp WHERE param='$param';");
+    function get_checkbox(string $param): string {
+        global $db;
+
+        $result = $db->get("SELECT value FROM wp_tttp WHERE param='$param';");
 
         if ($result) {
             return match ($result[0]->value) {
@@ -37,12 +41,12 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
-        set_bool("checkSecondMenu");
-        set_bool("darkMode");
+        set_checkbox("checkSecondMenu");
+        set_checkbox("darkMode");
     }
 
-    $second_menu = get_bool("checkSecondMenu");
-    $dark_mode = get_bool("darkMode");
+    $second_menu = get_checkbox("checkSecondMenu");
+    $dark_mode = get_checkbox("darkMode");
 ?>
 
 <html>
@@ -127,21 +131,6 @@
     <hr>
     <div class="tttp-bottom-section">
         <p>نسخه : <?php echo get_plugin_version(); ?></p>
-        <button onclick="toggleLogs()">Logs</button>
     </div>
 
-    
-    <textarea name="Logs" id="Logs" cols="60" rows="10" dir="ltr" class="hidden">
-        <?php
-            $messages = get_logs();
-            foreach ($messages as $message) {
-                echo $message . "\n";
-            }
-        ?>
-    </textarea>
-    <script>
-        function toggleLogs() {
-            document.getElementById("Logs").classList.toggle('hidden');
-        }
-    </script>
 </html>

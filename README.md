@@ -3,13 +3,18 @@
 A better version of wordpress twentytwentytwo theme, maybe :)
 
 # Build project
+
 install Dependencies
 
-``` npm i ```
+`npm i`
 
 Build
 
-``` npm run buildw ```
+` npm run build`
+
+Build and watch
+
+`npm run buildw`
 
 # Css classes
 

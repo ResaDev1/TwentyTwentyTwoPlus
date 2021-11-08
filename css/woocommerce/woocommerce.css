@@ -1,6 +1,7 @@
 @import "./product.css";
 @import "./checkout.css";
 @import "./product-page.css";
+@import "./cart.css";
 
 body .wp-site-blocks main .entry-content .woocommerce {
     max-width: 1000px !important;
@@ -16,4 +17,12 @@ body .wp-site-blocks main .entry-content .woocommerce {
 .woocommerce-message {
     background: var(--wp--preset--color--background) !important;
     color: var(--wp--preset--color--foreground) !important;
+}
+
+.woocommerce .wp-block-spacer {
+    height: 0 !important;
+}
+
+.woocommerce-message .wc-forward {
+    margin-bottom: 1rem !important;
 }
