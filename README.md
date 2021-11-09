@@ -26,7 +26,8 @@ Table name : wp_tttp
 
 | id  | Param      | Value      |
 | --- | ---------- | ---------- |
-| 0   | secondMenu | true/false |
+| 0   | secondMenu | 1/0 |
+| 1   | darkMode   | 1/0 |
 
 ID 0 : Activate second menu in header
 
