@@ -299,6 +299,10 @@ span.select2-dropdown {
     color: var(--wp--preset--color--foreground) !important;
 }
 
+.nocomments {
+    display: none;
+}
+
 /*
     Custom classes
 */

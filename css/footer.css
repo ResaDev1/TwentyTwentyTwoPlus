@@ -4,17 +4,11 @@
 
 body .wp-site-blocks footer {
     background-color: var(--wp--preset--color--block--background);
-    box-shadow: 0 0 5px 0 #7d7d7d56;
+    box-shadow: 0 0 5px 0 #7d7d7d2e;
     margin-top: 3rem;
+    padding-top: 2rem !important;
 }
 
 body .wp-site-blocks footer a {
     color: var(--wp--preset--color--link);
-}
-
-/*
-    Footer inner div
-*/
-body .wp-site-blocks footer div {
-    padding: 4rem !important;
 }
