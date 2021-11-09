@@ -31,6 +31,8 @@ Table name : wp_tttp
 
 ID 0 : Activate second menu in header
 
+ID 1 : Activate darkMode
+
 # Plugin
 
 ```
