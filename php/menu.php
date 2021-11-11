@@ -41,8 +41,19 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
-        set_checkbox("checkSecondMenu");
-        set_checkbox("darkMode");
+        if (isset($_POST['update'])) {
+            global $update;
+
+            [$ver, $check] = $update->check_update("Asfris", "TwentyTwentyTwoPlus");
+
+            // Check update
+            if ($check) echo "<div class='message'>New update is available -> $ver</div>";
+            else echo "<div class='message'>You are using a latest version of plugin</div>";
+        }
+        else {
+            set_checkbox("checkSecondMenu");
+            set_checkbox("darkMode");
+        }
     }
 
     $second_menu = get_checkbox("checkSecondMenu");
@@ -92,6 +103,12 @@
             margin-bottom: 2rem;
             margin-top: 2rem;
         }
+
+        .message {
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 0 5px #7d7d7d7d;
+        }
     </style>
 
     <main>
@@ -126,11 +143,13 @@
             </table>
             <input type="submit" value="ثبت تغییرات" class="button" style="margin-top: 1rem;">
         </form>
-        
     </main>
     <hr>
     <div class="tttp-bottom-section">
         <p>نسخه : <?php echo get_plugin_version(); ?></p>
+        <form method="POST" action="">
+            <input type="submit" value="بروزرسانی" class="button" name="update">
+        </form>
     </div>
 
 </html>

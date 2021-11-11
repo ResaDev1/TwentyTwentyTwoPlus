@@ -15,6 +15,7 @@ declare(strict_types=1);
 
 include 'php/version.php';
 include 'php/db.php';
+include 'php/update.php';
 
 // Get plugin dir url
 $dir = plugin_dir_url(__FILE__);
@@ -23,6 +24,7 @@ const INFO = "INFO";
 const DB_TABLE = "tttp";
 
 $db = new Db(DB_TABLE);
+$update = new Update(PLUGIN_VERSION);
 
 /**
  * Register Menu
