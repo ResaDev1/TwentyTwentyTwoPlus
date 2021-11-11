@@ -216,6 +216,11 @@ body.light {
     font-family: var(--wp--preset--font-family--system-font) !important;
 }
 
+html {
+    /* FIXES bug */
+    height: 100%; /* Why ? */
+}
+
 body {
     margin: 0;
 }

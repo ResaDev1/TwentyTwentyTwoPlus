@@ -2,12 +2,20 @@
     Woocommerce product styles
 */
 
+.woocommerce-page ul.products {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .woocommerce-page ul.products li.product {
     padding: 1rem !important;
     transition: all 0.2s;
     background-color: var(--wp--preset--color--block--background);
     margin-left: -1px !important;
+    margin-top: -1px !important;
     border: var(--wp--wc--product--border);
+    margin-bottom: 0 !important;
+    width: 21% !important;
 }
 
 .woocommerce-page ul.products li.product h2.woocommerce-loop-product__title {
