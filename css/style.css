@@ -216,12 +216,26 @@ body.light {
     font-family: var(--wp--preset--font-family--system-font) !important;
 }
 
+html {
+    /* FIXES bug */
+    height: 100%; /* Why ? */
+}
+
 body {
     margin: 0;
 }
 
 body.home {
     background: var(--wp--preset--color--home--background);
+}
+
+body.home .wp-site-blocks main {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+}
+
+body.home .wp-site-blocks main * {
+    max-width: 100% !important;
 }
 
 h1,
