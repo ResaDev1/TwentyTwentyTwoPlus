@@ -44,7 +44,8 @@
         if (isset($_POST['update'])) {
             global $update;
 
-            [$ver, $check] = $update->check_update("Asfris", "TwentyTwentyTwoPlus");
+            [$ver, $check] = $update->check_update();
+            $update->upgrade();
 
             // Check update
             if ($check) echo "<div class='message'>New update is available -> $ver</div>";
