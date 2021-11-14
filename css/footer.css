@@ -6,6 +6,7 @@ body .wp-site-blocks footer {
     background-color: var(--wp--preset--color--block--background);
     box-shadow: 0 0 5px 0 #7d7d7d2e;
     padding-top: 2rem !important;
+    padding-bottom: 2rem;
 }
 
 body .wp-site-blocks footer a {

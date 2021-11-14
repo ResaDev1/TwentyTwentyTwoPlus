@@ -31,6 +31,38 @@ function send_get(string $url) {
 }
 
 /**
+ * Github Asset Files
+ */
+class AssetFile {
+    public string $addr;
+    public string $content_type;
+    public int $size;
+
+    /**
+     * @since 0.1.0
+     */
+    function __construct(string $addr, string $content_type, int $size) {
+        $this->addr = $addr;
+        $this->content_type = $content_type;
+        $this->size = $size;
+    }
+
+    /**
+     * Download File
+     * @since 0.1.0
+     * @return int Content of file
+     */
+    public function download(string $outputAddr): bool {
+        $file = download_url($this->addr);
+
+        copy( $file, $outputAddr );
+        @unlink( $file );
+
+        return true;
+    }
+}
+
+/**
  * Sends get request to api, and recives response data
  */
 class Get {
@@ -123,6 +155,21 @@ class GithubApi {
 
         return $response;
     }
+
+    /**
+     * Get latest release and download asset
+     * @param assetIndex
+     * @since 0.1.0
+     */
+    public function get_latest_release_asset(int $assetIndex): AssetFile {
+        $latest = $this->get_repo_releases();
+
+        $file_addr = $latest[0]->assets[$assetIndex]->browser_download_url;
+        $file_type = $latest[0]->assets[$assetIndex]->content_type;
+        $file_size = $latest[0]->assets[$assetIndex]->size;
+
+        return new AssetFile($file_addr, $file_type, $file_size);
+    }
 }
 
 /**
@@ -135,12 +182,18 @@ class Update {
     private string $plugin_version;
 
     /**
+     * GitHubApi
+     */
+    private GithubApi $api;
+
+    /**
      * When class created
      * @param current_version pass current version of plugin
      * @since 0.1.0
      */
-    function __construct(string $current_version) {
+    function __construct(string $current_version, string $username, string $repo) {
         $this->plugin_version = $current_version;
+        $this->api = new GitHubApi($repo, $username);
     }
 
     /**
@@ -163,13 +216,37 @@ class Update {
      * @since 0.1.0
      * @return object 
      */
-    public function check_update(string $username, string $repo) {
-        $api = new GithubApi($repo, $username);
-
-        $version = $api->get_repo_releases()[0]->tag_name;
+    public function check_update() {
+        $version = $this->api->get_repo_releases()[0]->tag_name;
 
         if ($this->check_version($version)) return array($version, true);
         else return array($version, false);
+    }
+
+    /**
+     * Download version and extract zip to plugin dir
+     * @since 0.1.0
+     */
+    public function upgrade() {
+        $asset = $this->api->get_latest_release_asset(0);
+
+        $newFilePath = ABSPATH . "./wp-content/plugins/TwentyTwentyTwoPlus/tttp.zip";
+        $pluginPath = ABSPATH . "./wp-content/plugins/TwentyTwentyTwoPlus/";
+
+        $file = $asset->download($newFilePath);
+
+        $zip = new ZipArchive;
+
+        $res = $zip->open($newFilePath);
+
+        if ($res === TRUE) {
+            echo "Zip file opened.";
+            $zip->extractTo($pluginPath);
+            $zip->close();
+        }
+        else {
+            echo "ERROR :" . $res;
+        }
     }
 }
 

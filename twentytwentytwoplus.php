@@ -24,7 +24,7 @@ const INFO = "INFO";
 const DB_TABLE = "tttp";
 
 $db = new Db(DB_TABLE);
-$update = new Update(PLUGIN_VERSION);
+$update = new Update(PLUGIN_VERSION, "Asfris", "TwentyTwentyTwoPlus");
 
 /**
  * Register Menu
