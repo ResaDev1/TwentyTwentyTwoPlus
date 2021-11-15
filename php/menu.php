@@ -47,7 +47,8 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
         if (isset($_POST['update'])) {
-            $update->upgrade();
+            if ($check) $update->upgrade();
+            else echo "<div class='message'>You are using latest version of plugin.</div>";
         }
         else {
             set_checkbox("checkSecondMenu");
