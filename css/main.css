@@ -2,7 +2,7 @@
     Theme main section styles
 */
 
-/* body .wp-site-blocks main {} */
+@import "./posts.css";
 
 /*
     TODO: Fixe this section bug
