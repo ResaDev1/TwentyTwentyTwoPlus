@@ -317,6 +317,11 @@ span.select2-dropdown {
     display: none;
 }
 
+.wp-block-site-title a {
+    text-decoration: none;
+    color: var(--wp--preset--color--foreground);
+}
+
 /*
     Custom classes
 */
