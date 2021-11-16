@@ -201,7 +201,7 @@ class Update {
      * If $version deferent than $this->plugin_version then return true, if not return false.
      * @since 0.1.0
      */
-    private function check_version(string $version) {
+    private function check_version(string $version): bool {
         if ($this->plugin_version !== $version) {
             return true;
         }
@@ -214,9 +214,9 @@ class Update {
      * @param username Github username
      * @param repo Github repository name
      * @since 0.1.0
-     * @return object 
+     * @return array 
      */
-    public function check_update() {
+    public function check_update(): array {
         $version = $this->api->get_repo_releases()[0]->tag_name;
 
         if ($this->check_version($version)) return array($version, true);
@@ -227,7 +227,7 @@ class Update {
      * Download version and extract zip to plugin dir
      * @since 0.1.0
      */
-    public function upgrade() {
+    public function upgrade(): void {
         $asset = $this->api->get_latest_release_asset(0);
 
         $newFilePath = ABSPATH . "./wp-content/plugins/TwentyTwentyTwoPlus/tttp.zip";
@@ -242,11 +242,15 @@ class Update {
         if ($res === TRUE) {
             echo "Zip file opened.";
             $zip->extractTo($pluginPath);
+            echo "Zip file extracted.";
+            $zip->extractTo($pluginPath);
             $zip->close();
         }
         else {
             echo "ERROR :" . $res;
         }
+
+        echo "Updated";
     }
 }
 
