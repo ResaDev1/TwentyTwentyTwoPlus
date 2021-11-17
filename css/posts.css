@@ -43,6 +43,10 @@
         flex-direction: column;
     }
 
+    body .wp-site-blocks main ul li div .alignwide div {
+        text-align: justify;
+    }
+
     body .wp-site-blocks main ul .post:last-child {
        border: none !important;
     }
