@@ -5,17 +5,6 @@
 @import "./posts.css";
 
 /*
-    TODO: Fixe this section bug
-*/
-body .wp-site-blocks main .wp-block-post-template li {
-    /* background: #fff; */
-    padding: 10px;
-    /* border-radius: 6px; */
-    /* box-shadow: 0 0 5px #0d0d0d40; */
-    border-bottom: 1px solid rgba(0, 0, 0, 0.377);
-}
-
-/*
     Remove posts last item border
 */
 body .wp-site-blocks main ul .post:last-child {
