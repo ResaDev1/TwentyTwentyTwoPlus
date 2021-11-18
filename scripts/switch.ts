@@ -26,13 +26,13 @@ const asyncLocalStorage = {
 };
 
 /**
- * @name clearInnerHTML
- * @description Clears inner html of element and set some new data. 
+ * @name replaceInnerHTML
+ * @description Repace inner html of element and set some new data. 
  * @param {Element} element target element
  * @param {string} html for replace after clear
  * @returns void
  */
-function clearInnerHTML(element: Element, html: string): void {
+function replaceInnerHTML(element: Element, html: string): void {
     element.innerHTML = "";
     element.innerHTML = html;
 }
@@ -208,7 +208,7 @@ export class Switch {
             this.themeState = state;
     
             // Change changeState button icon
-            clearInnerHTML(this.element, returnSvg(state));
+            replaceInnerHTML(this.element, returnSvg(state));
         })
     }
 
