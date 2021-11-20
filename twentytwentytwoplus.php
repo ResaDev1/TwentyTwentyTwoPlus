@@ -120,6 +120,24 @@ function dark_theme(): void {
 add_action( 'wp_enqueue_scripts', 'dark_theme' );
 
 /**
+ * Check if postImage option enabled, then inject css
+ * @since 0.1.1
+ * @return void
+ */
+function posts_has_image(): void {
+    global $dir, $db;
+
+    $result = $db->get("SELECT value FROM wp_" . DB_TABLE . " WHERE param='postImage'");
+    if ($result) {
+        // Inject post_has_image style
+        if ($result[0]->value == "1") {
+            inject_style("TTTPPostImage", $dir . "css/posts-has-image.css");
+        }
+    }
+}
+add_action( 'wp_enqueue_scripts', 'posts_has_image' );
+
+/**
  * Inject javascript to theme
  * @since 0.0.2
  * @return void
