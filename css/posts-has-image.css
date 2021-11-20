@@ -1,5 +1,5 @@
 /*
-    Posts image
+    If postsImage options enabled in setting then use this css.
 */
 
 body .wp-site-blocks main .wp-block-post-template li {
@@ -16,38 +16,36 @@ body .wp-site-blocks main .wp-block-post-template li {
     }
 
     body .wp-site-blocks main ul li div h2 {
+        float: left;
+        width: calc(100% - 347px);
         margin-bottom: 8px !important;
-        max-width: 783px !important;
     }
 
     body .wp-site-blocks main ul li div h2 a {
         text-decoration: none !important;
     }
+    
+    body .wp-site-blocks main ul li div .wp-block-post-featured-image {
+        display: block !important;
+        float: right;
+    }
+    
+    body .wp-site-blocks main ul li div .wp-block-post-featured-image a img{
+        width: 330px;
+    }
 
     body .wp-site-blocks main ul li div .wp-block-columns {
+        width: calc(100% - 365px);
         text-align: justify;
+        margin-right: 350px !important;
     }
 
-    body .wp-site-blocks main ul li div .wp-block-columns .wp-block-column:nth-last-child(1) {
-        display: none;
-    }
-
-    body .wp-site-blocks main ul li div .wp-block-columns .wp-block-column:nth-last-child(2) {
-        flex-basis: 776px !important;
-    }
-
-    body .wp-site-blocks main ul li div .alignwide .wp-block-column {
+    body .wp-site-blocks main ul li div .alignwide div {
         display: flex;
         flex-direction: column;
-        margin-right: auto !important;
-        margin-left: auto !important;
     }
 
     body .wp-site-blocks main ul .post:last-child {
        border: none !important;
-    }
-
-    body .wp-site-blocks main ul li div .wp-block-post-featured-image {
-        display: none;
     }
 }

@@ -53,11 +53,13 @@
         else {
             set_checkbox("checkSecondMenu");
             set_checkbox("darkMode");
+            set_checkbox("postImage");
         }
     }
 
     $second_menu = get_checkbox("checkSecondMenu");
     $dark_mode = get_checkbox("darkMode");
+    $post_image = get_checkbox("postImage");
 ?>
 
 <html>
@@ -137,6 +139,14 @@
                         </td>
                         <td>
                             <input type="checkbox" name="darkMode" value="checked" <?= $dark_mode ?>>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            تصویر شاخص نوشته ها
+                        </td>
+                        <td>
+                            <input type="checkbox" name="postImage" value="checked" <?= $post_image ?>>
                         </td>
                     </tr>
                 </tbody>
