@@ -24,14 +24,11 @@ Build and watch
 
 Table name : wp_tttp
 
-| id  | Param      | Value      |
-| --- | ---------- | ---------- |
-| 0   | secondMenu | 1/0 |
-| 1   | darkMode   | 1/0 |
-
-ID 0 : Activate second menu in header
-
-ID 1 : Activate darkMode
+| id  | Param      | Value      | Description    |
+| --- | ---------- | ---------- | ---------- |
+| 0   | secondMenu | 1/0 |       Activate second menu in header |
+| 1   | darkMode   | 1/0 |       Activate darkMode
+| 2   | postImage  | 1/0 |       Posts image toggle
 
 # Plugin
 
