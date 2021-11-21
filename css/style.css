@@ -1,6 +1,6 @@
 /*
     * TwentyTwentyTwoPlus Main Style
-    * Version: 0.1.0
+    * Version: 0.1.2
     * ResaDev team
 */
 
@@ -235,7 +235,7 @@ body.home .wp-site-blocks main {
 }
 
 body.home .wp-site-blocks main * {
-    max-width: 100% !important;
+    /* max-width: 100% !important; */
 }
 
 h1,
