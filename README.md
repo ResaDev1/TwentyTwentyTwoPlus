@@ -28,10 +28,13 @@ Table name : wp_tttp
 | --- | ---------- | ---------- |
 | 0   | secondMenu | 1/0 |
 | 1   | darkMode   | 1/0 |
+| 2   | postImage  | 1/0 |
 
 ID 0 : Activate second menu in header
 
 ID 1 : Activate darkMode
+
+ID 2 : Posts image toggle
 
 # Plugin
 
