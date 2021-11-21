@@ -318,6 +318,10 @@ span.select2-dropdown {
     color: var(--wp--preset--color--foreground);
 }
 
+.wp-block-quote {
+    border-width: 4px !important;
+}
+
 /*
     Custom classes
 */
