@@ -30,12 +30,6 @@ Table name : wp_tttp
 | 1   | darkMode   | 1/0 |       Activate darkMode
 | 2   | postImage  | 1/0 |       Posts image toggle
 
-ID 0 : Activate second menu in header
-
-ID 1 : Activate darkMode
-
-ID 2 : Posts image toggle
-
 # Plugin
 
 ```
