@@ -2,6 +2,10 @@
     If postsImage options enabled in setting then use this css.
 */
 
+body.home .wp-site-blocks main * {
+    max-width: 100% !important;
+}
+
 body .wp-site-blocks main .wp-block-post-template li {
         border-bottom: 1px solid var(--wp--preset--color--foreground) !important;
 }

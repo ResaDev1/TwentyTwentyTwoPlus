@@ -234,10 +234,6 @@ body.home .wp-site-blocks main {
     padding-right: 30px !important;
 }
 
-body.home .wp-site-blocks main * {
-    /* max-width: 100% !important; */
-}
-
 h1,
 h2,
 h3,
@@ -320,6 +316,10 @@ span.select2-dropdown {
 .wp-block-site-title a {
     text-decoration: none;
     color: var(--wp--preset--color--foreground);
+}
+
+.wp-block-quote {
+    border-width: 4px !important;
 }
 
 /*
