@@ -28,6 +28,11 @@ body .wp-site-blocks header .wp-block-group.alignwide {
 }
 
 body .wp-site-blocks header .wp-block-group.alignwide h1 a {
+    font-size: 1.4rem;
+}
+
+body .wp-site-blocks header .wp-block-group.alignwide h1 a {
+    font-style: normal;
     text-decoration: none;
     font-weight: bold;
 }

@@ -81,6 +81,7 @@
 .woocommerce div.product .summary .price {
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
 }
 
 .woocommerce div.product .summary .price ins bdi {
