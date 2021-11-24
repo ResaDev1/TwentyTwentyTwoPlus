@@ -9,6 +9,11 @@ body .wp-site-blocks footer {
     padding-bottom: 1rem;
 }
 
+body .wp-site-blocks footer * {
+    max-width: 1000px !important;
+}
+
 body .wp-site-blocks footer a {
     color: var(--wp--preset--color--link);
+    text-decoration: none;
 }
