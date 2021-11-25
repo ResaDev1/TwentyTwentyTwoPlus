@@ -25,6 +25,8 @@ body .wp-site-blocks header .wp-block-group.alignwide {
     flex: 1;
 
     font-weight: normal;
+
+    max-width: none !important;
 }
 
 body .wp-site-blocks header .wp-block-group.alignwide h1 a {
