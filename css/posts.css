@@ -19,6 +19,7 @@ body .wp-site-blocks main ul li div h2 {
     max-width: 783px !important;
     font-size: 2rem !important;
     height: 2rem !important;
+    max-width: 776px !important;
 }
 
 .entry-content.wp-block-post-content p {
@@ -29,12 +30,8 @@ body .wp-site-blocks main ul li div h2 {
     font-size: 38px !important;
 }
 
-.post-template-default .wp-site-blocks main * {
-    max-width: auto !important;
-}
-
 .post-template-default .entry-content.wp-block-post-content * {
-    max-width: 850px !important;
+    max-width: 1000px !important;
 }
 
 @media only screen and (min-width: 777px) {

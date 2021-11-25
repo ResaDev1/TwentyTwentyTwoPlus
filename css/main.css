@@ -11,6 +11,10 @@ body .wp-site-blocks main ul .post:last-child {
     border: none;
 }
 
+body .wp-site-blocks main hr.wp-block-separator {
+    max-width: none !important;
+}
+
 /*
     Fixes bug
 */
@@ -35,13 +39,29 @@ body .wp-site-blocks main ul .post:last-child {
     }
 }
 
+.comment-form .form-submit {
+    text-align: center;
+}
+
 .comment-form .form-submit input[type=submit] {
-    width: 100% !important;
+    width: 30% !important;
 }
 
 /*
     Posts and Products comment section
 */
+.wp-block-post-comments {
+    padding-top: 1rem !important;
+}
+
+.wp-block-post-comments form textarea {
+    height: 9rem;
+}
+
+.wp-block-post-comments h3 {
+    font-size: 2rem !important;
+}
+
 .wp-block-post-comments p.logged-in-as a, .wp-block-post-comments p.logged-in-as {
     text-decoration: none;
     color: var(--wp--preset--color--link);
