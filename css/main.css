@@ -11,6 +11,14 @@ body .wp-site-blocks main ul .post:last-child {
     border: none;
 }
 
+body .wp-site-blocks main .wp-block-group:first-child hr.wp-block-separator {
+    max-width: none !important;
+}
+
+body .wp-site-blocks main .wp-block-group:nth-child(2n) .wp-block-separator hr {
+    max-width: none !important;
+}
+
 /*
     Fixes bug
 */
