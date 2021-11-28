@@ -41,13 +41,13 @@ body .wp-site-blocks main ul li div h2 {
     max-width: 1000px !important;
 }
 
+body .wp-site-blocks main ul li div .wp-block-columns {
+    text-align: justify;
+}
+
 @media only screen and (min-width: 777px) {
     body .wp-site-blocks main ul li {
         margin-top: 2rem !important;
-    }
-
-    body .wp-site-blocks main ul li div .wp-block-columns {
-        text-align: justify;
     }
 
     body .wp-site-blocks main ul li div .wp-block-columns .wp-block-column:nth-last-child(1) {
@@ -67,5 +67,11 @@ body .wp-site-blocks main ul li div h2 {
 
     body .wp-site-blocks main ul .post:last-child {
         border: none !important;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    body .wp-site-blocks main ul li div h2 {
+        font-size: 1.6rem !important;
     }
 }
