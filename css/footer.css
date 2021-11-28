@@ -12,6 +12,7 @@ body .wp-site-blocks footer {
 
 body .wp-site-blocks footer * {
     max-width: 1000px !important;
+    text-align: justify;
 }
 
 body .wp-site-blocks footer a {
