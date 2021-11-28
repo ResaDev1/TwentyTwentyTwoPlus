@@ -28,6 +28,10 @@ body .wp-site-blocks main ul li div h2 {
     font-size: 2rem !important;
 }
 
+.entry-content.wp-block-post-content h2 {
+    margin-bottom: 17px !important;
+}
+
 .entry-content.wp-block-post-content p {
     text-align: justify !important;
     margin-top: 0 !important;
@@ -73,5 +77,9 @@ body .wp-site-blocks main ul li div .wp-block-columns {
 @media only screen and (max-width: 600px) {
     body .wp-site-blocks main ul li div h2 {
         font-size: 1.6rem !important;
+    }
+
+    .post-template-default h2 {
+        font-size: 30px !important;
     }
 }
