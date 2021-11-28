@@ -235,7 +235,12 @@ body.home .wp-site-blocks main {
 }
 
 body.home .wp-site-blocks main * {
-    max-width: 100% !important;
+    max-width: 100%;
+}
+
+/* Fixes bug */
+body .wp-site-blocks main ul li div h2 {
+    max-width: 776px !important;
 }
 
 h1,
