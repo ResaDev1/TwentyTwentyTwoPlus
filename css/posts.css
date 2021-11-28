@@ -2,8 +2,16 @@
 Posts image
 */
 
+body .wp-site-blocks main ul li div .wp-block-post-featured-image {
+    display: none;
+}
+
 body .wp-site-blocks main .wp-block-post-template li {
     border-bottom: 1px solid #7d7d7d7d !important;
+}
+
+body .wp-site-blocks main .wp-block-post-template li div .alignwide:nth-child(2) {
+    margin-top: 0 !important;
 }
 
 body .wp-site-blocks main ul li div h2 a {
@@ -18,11 +26,11 @@ body .wp-site-blocks main ul li div h2 {
     margin-bottom: 8px !important;
     max-width: 783px !important;
     font-size: 2rem !important;
-    height: 2rem !important;
 }
 
 .entry-content.wp-block-post-content p {
     text-align: justify !important;
+    margin-top: 0 !important;
 }
 
 .post-template-default h2 {
@@ -59,9 +67,5 @@ body .wp-site-blocks main ul li div h2 {
 
     body .wp-site-blocks main ul .post:last-child {
         border: none !important;
-    }
-
-    body .wp-site-blocks main ul li div .wp-block-post-featured-image {
-        display: none;
     }
 }
