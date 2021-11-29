@@ -38,6 +38,10 @@ body .wp-site-blocks main ul li div h2 {
     margin-top: 0 !important;
 }
 
+.post-template-default .entry-content.wp-block-post-content img {
+    max-width: 100% !important;
+}
+
 .post-template-default h2 {
     font-size: 38px !important;
 }
