@@ -5,16 +5,22 @@
 body .wp-site-blocks footer {
     background-color: var(--wp--preset--color--block--background);
     box-shadow: 0 0 5px 0 #7d7d7d2e;
-    padding-top: 1rem !important;
-    padding-bottom: 1rem;
+    padding-top: 35px !important;
+    padding-bottom: 35px;
     margin-top: 5rem;
 }
 
 body .wp-site-blocks footer * {
     max-width: 1000px !important;
+    text-align: justify;
 }
 
 body .wp-site-blocks footer a {
     color: var(--wp--preset--color--link);
     text-decoration: none;
+}
+
+body .wp-site-blocks footer div {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
 }
