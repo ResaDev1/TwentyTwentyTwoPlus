@@ -9,7 +9,7 @@
     Header
 */
 body .wp-site-blocks header {
-    height: 4rem;
+    height: 70px;
     box-shadow: 0 7px 8px 0 rgb(0 0 0 / 4%);
     background: var(--wp--preset--color--block--background);
     display: flex;
