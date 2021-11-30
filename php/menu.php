@@ -68,12 +68,12 @@
             display: none;
         }
 
-		main form {
-		    display: flex;
-		    flex-direction: column;
+		    main form {
+		        display: flex;
+		        flex-direction: column;
             align-items: baseline;
             margin-top: 1rem;
-		}
+		    }
 
         input[type=submit] {
             background: none;
