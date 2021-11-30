@@ -43,7 +43,7 @@
     // Check update
     [$ver, $check] = $update->check_update();
     if ($check) echo "<div class='message'>New update is available -> $ver</div>";
-    
+
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
         if (isset($_POST['update'])) {
