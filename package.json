@@ -4,7 +4,7 @@
     "description": ":)",
     "main": "index.js",
     "scripts": {
-        "buildw": "webpack --config webpack.config.js --env NODE_ENV=development --mode development -w",
+        "start": "webpack --config webpack.config.js --env NODE_ENV=development --mode development -w",
         "build": "webpack --config webpack.config.js --env NODE_ENV=development --mode development"
     },
     "repository": {
