@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = (env) => {
     return {
-        entry: "./scripts/index.ts",
+        entry: "./scripts/inject.js",
         mode: "development",
         output: {
             filename: "bundle.js",
