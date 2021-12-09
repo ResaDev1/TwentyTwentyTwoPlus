@@ -64,10 +64,6 @@ body .wp-site-blocks main hr.wp-block-separator {
     height: 9rem;
 }
 
-.wp-block-post-comments h3 {
-    font-size: 2rem !important;
-}
-
 .wp-block-post-comments p.logged-in-as a, .wp-block-post-comments p.logged-in-as {
     text-decoration: none;
     color: var(--wp--preset--color--link);

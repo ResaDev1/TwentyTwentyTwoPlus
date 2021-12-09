@@ -23,7 +23,7 @@
         url("https://cdn.cleveraj.net/fonts/WebYekan.ttf") format("truetype"),
         url("https://cdn.cleveraj.net/fonts/WebYekan.svg#WebYekan")
             format("svg");
-}
+
 
 @font-face {
     font-family: "IRANYekan";
@@ -250,6 +250,7 @@ h4,
 h5,
 h6 {
     overflow-wrap: normal !important;
+    line-height: initial !important;
 }
 
 input,

@@ -92,3 +92,18 @@ body .wp-site-blocks main ul li div .wp-block-columns {
 body .wp-site-blocks main:nth-last-child(2) .wp-block-group div:nth-of-type(1) {
     max-width: 1000px;
 }
+
+.wp-block-post-comments ol li {
+    border-bottom: solid 1px #7d7d7d7d;
+    margin-top: 30px;
+}
+
+.wp-block-post-comments h3 {
+    font-size: 2rem !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .wp-block-post-comments h3 {
+        font-size: 1.5rem !important;
+    }
+}
