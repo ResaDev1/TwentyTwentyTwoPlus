@@ -139,14 +139,15 @@ function posts_has_image(): void {
 add_action( 'wp_enqueue_scripts', 'posts_has_image' );
 
 /**
- * Inject javascript to theme
- * @since 0.0.2
+ * Inject switch script to theme
+ * @since 0.1.3
  * @return void
  */
-function inject_script(): void {
+function inject_switch_script(): void {
     global $dir;
     
-    wp_enqueue_script('script', $dir . 'dist/bundle.js');
+    if (has_block("tttp/switch"))
+        wp_enqueue_script('script', $dir . 'dist/bundle.js');
 }
 add_action('wp_enqueue_scripts', 'inject_script');
 
