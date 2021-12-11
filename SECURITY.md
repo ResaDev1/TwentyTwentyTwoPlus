@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-Only supported version will get security update
+Only supported versions will get security update
 
 | Version      | Supported          |
 | -------      | ------------------ |
