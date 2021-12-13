@@ -1,14 +1,14 @@
 {
 	"$schema": "https://json.schemastore.org/block.json",
 	"apiVersion": 2,
-	"name": "tttp/switch",
+	"name": "create-block/switch",
 	"version": "0.1.0",
 	"title": "Switch",
 	"category": "widgets",
 	"icon": "smiley",
-	"description": "Switch themes",
+	"description": "Example block written with ESNext standard and JSX support – build step required.",
 	"supports": {
-		"html": true
+		"html": false
 	},
 	"textdomain": "switch",
 	"editorScript": "file:./build/index.js",

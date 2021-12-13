@@ -4,7 +4,8 @@
  * @author The resadev team
  */
 
-import { Switch } from "../blocks/switch/src/switch";
+import { Switch } from "../switch/src/switch";
+import "../css/style.css";
 
 /**
  * @description New Switch object
@@ -30,6 +31,7 @@ const btn = (swit) => document.getElementById("switch-btn").addEventListener('cl
 const main = () => {
     const element = document.querySelector('body');
     let swit = sw(element);
+    swit.changeTheme(localStorage.getItem('theme'));
     btn(swit);
 };
 

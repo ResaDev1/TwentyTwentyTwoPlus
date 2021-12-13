@@ -11,8 +11,6 @@ coverage
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
 
-build/
-
 # Dependency directories
 node_modules/
 
@@ -27,3 +25,5 @@ node_modules/
 
 # dotenv environment variables file
 .env
+
+build

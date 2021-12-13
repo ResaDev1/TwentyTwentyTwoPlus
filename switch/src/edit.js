@@ -32,7 +32,7 @@ import './editor.scss';
 export default function Edit() {
 	return (
 		<p {...useBlockProps()}>
-			{__('Switch Element', 'switch')}
+			{__('Switch – hello from the editor!', 'switch')}
 		</p>
 	);
 }

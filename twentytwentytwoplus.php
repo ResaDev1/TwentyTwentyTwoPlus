@@ -16,7 +16,7 @@ declare(strict_types=1);
 include 'php/version.php';
 include 'php/db.php';
 include 'php/update.php';
-include 'blocks/switch/switch.php';
+include 'switch/switch.php';
 
 // Get plugin dir url
 $dir = plugin_dir_url(__FILE__);
@@ -146,9 +146,8 @@ add_action( 'wp_enqueue_scripts', 'posts_has_image' );
 function inject_switch_script(): void {
     global $dir;
     
-    if (has_block("tttp/switch"))
-        wp_enqueue_script('script', $dir . 'dist/bundle.js');
+    wp_enqueue_script('script', $dir . 'dist/bundle.js');
 }
-add_action('wp_enqueue_scripts', 'inject_script');
+add_action('wp_enqueue_scripts', 'inject_switch_script');
 
 ?>
