@@ -1,6 +1,6 @@
 # TwentyTwentyTwoPlus Plugin
 
-A better version of wordpress twentytwentytwo theme, maybe :)
+A better version of wordpress twentytwentytwo theme.
 
 # Build project
 
@@ -14,7 +14,7 @@ Build
 
 Build and watch
 
-`npm run buildw`
+`npm start`
 
 # Css classes
 
