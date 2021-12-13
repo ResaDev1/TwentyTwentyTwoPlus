@@ -14,7 +14,7 @@ Build
 
 Build and watch
 
-`npm run buildw`
+`npm start`
 
 # Css classes
 
