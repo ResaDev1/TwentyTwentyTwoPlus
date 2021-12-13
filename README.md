@@ -1,6 +1,6 @@
 # TwentyTwentyTwoPlus Plugin
 
-A better version of wordpress twentytwentytwo theme, maybe :)
+A better version of wordpress twentytwentytwo theme.
 
 # Build project
 
