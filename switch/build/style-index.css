@@ -7,21 +7,29 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
-body div.wp-block-create-block-switch svg {
+.wp-block-create-block-switch #light-mode-icon {
+  display: none;
+  cursor: pointer;
+}
+.wp-block-create-block-switch #dark-mode-icon {
+  display: none;
+  cursor: pointer;
+}
+.wp-block-create-block-switch #system-mode-icon {
   display: none;
   cursor: pointer;
 }
 
-body.light div.wp-block-create-block-switch svg#light-mode-icon {
-  display: block;
+body.light #light-mode-icon {
+  display: block !important;
 }
 
-body.dark div.wp-block-create-block-switch svg#dark-mode-icon {
-  display: block;
+body.dark #dark-mode-icon {
+  display: block !important;
 }
 
-body.system div.wp-block-create-block-switch svg#system-mode-icon {
-  display: block;
+body.system #system-mode-icon {
+  display: block !important;
 }
 
 /*# sourceMappingURL=style-index.css.map*/
