@@ -15,6 +15,13 @@ body .wp-site-blocks header {
     display: flex;
 }
 
+@media (min-width: 600px) {
+    body .wp-site-blocks header .wp-block-group.alignwide {
+        justify-content: space-around !important;
+        gap: 18rem !important;
+    }
+}
+
 /*
     Header body
 */
