@@ -6,7 +6,6 @@ Only supported versions will get security update
 
 | Version      | Supported          |
 | -------      | ------------------ |
-| 0.1.3-stable | :white_check_mark: |
 | 0.1.3        | :white_check_mark: |
 | 0.1.2-stable | :white_check_mark: |
 | 0.1.2        | :x: |

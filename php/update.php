@@ -1,10 +1,20 @@
 <?php
 
+const ASSET_FILE_SIZE_LIMIT = 2; // AS MEGABYTE
+
+/**
+ * Covert mb to bytes
+ * @return void
+ */
+function megabyteToByte(int $mb): int {
+    return $mb * 1000000;
+}
+
 /**
  * Sends get request with cURL
  * @since 0.1.0
  */
-function send_get(string $url) {
+function send_get(string $url): bool | string {
     $userAgent = 'Mozilla/5.0 (Windows NT 5.1; rv:31.0) Gecko/20100101 Firefox/31.0';
 
     //Initialize cURL.
@@ -34,8 +44,22 @@ function send_get(string $url) {
  * Github Asset Files
  */
 class AssetFile {
+    /**
+     * Address of file
+     * @var string
+     */
     public string $addr;
+
+    /**
+     * Content type
+     * @var string
+     */
     public string $content_type;
+
+    /**
+     * size of file
+     * @var int
+     */
     public int $size;
 
     /**
@@ -158,15 +182,22 @@ class GithubApi {
 
     /**
      * Get latest release and download asset
-     * @param assetIndex
+     * @param int $assetIndex
+     * @param int $sizeLimit
+     * @return AssetFile
      * @since 0.1.0
      */
-    public function get_latest_release_asset(int $assetIndex): AssetFile {
+    public function get_latest_release_asset(int $assetIndex, int $sizeLimit): AssetFile {
         $latest = $this->get_repo_releases();
 
         $file_addr = $latest[0]->assets[$assetIndex]->browser_download_url;
         $file_type = $latest[0]->assets[$assetIndex]->content_type;
         $file_size = $latest[0]->assets[$assetIndex]->size;
+
+        if ($file_size > $sizeLimit) {
+            // Error
+            exit("Error: Asset file size is bigger than limit.");
+        }
 
         return new AssetFile($file_addr, $file_type, $file_size);
     }
@@ -228,7 +259,7 @@ class Update {
      * @since 0.1.0
      */
     public function upgrade(): void {
-        $asset = $this->api->get_latest_release_asset(0);
+        $asset = $this->api->get_latest_release_asset(0, megabyteToByte(ASSET_FILE_SIZE_LIMIT));
 
         $newFilePath = ABSPATH . "./wp-content/plugins/TwentyTwentyTwoPlus/tttp.zip";
         $pluginPath = ABSPATH . "./wp-content/plugins/TwentyTwentyTwoPlus/";
