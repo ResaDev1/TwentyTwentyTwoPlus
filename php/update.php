@@ -264,12 +264,12 @@ class Update {
         // Get current plugin folder name
         // Split DIR var. example url -> localhost:8080/addr/addr/[PLUGIN_NAME]
         $folder_dir = preg_split("#/#", $dir);
-        $folder_dir_len = count($folder_dir) - 1;
+        $folder_dir_len = count($folder_dir) - 2;
         $result_folder = $folder_dir[$folder_dir_len];
 
         $asset = $this->api->get_latest_release_asset(0, megabyteToByte(ASSET_FILE_SIZE_LIMIT));
 
-        $newFilePath = ABSPATH . "./wp-content/plugins/$result_folder/tttp.zip";
+        $newFilePath = ABSPATH . "./wp-content/plugins/" . $result_folder . "/tttp.zip";
 
         $file = $asset->download($newFilePath);
 
