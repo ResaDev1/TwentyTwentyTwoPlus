@@ -269,7 +269,8 @@ class Update {
 
         $asset = $this->api->get_latest_release_asset(0, megabyteToByte(ASSET_FILE_SIZE_LIMIT));
 
-        $newFilePath = ABSPATH . "./wp-content/plugins/" . $result_folder . "/tttp.zip";
+        $newFilePath = ABSPATH . "wp-content/plugins/" . $result_folder . "/tttp.zip";
+        $pluginPath  = ABSPATH . "wp-content/plugins/" . $result_folder;
 
         $file = $asset->download($newFilePath);
 
@@ -278,17 +279,16 @@ class Update {
         $res = $zip->open($newFilePath);
 
         if ($res === TRUE) {
-            echo "Zip file opened.";
-            $zip->extractTo($dir);
-            echo "Zip file extracted.";
-            $zip->extractTo($dir);
+            echo "Zip file opened.\n";
+            echo "Zip file extracted.\n";
+            $zip->extractTo($pluginPath);
             $zip->close();
         }
         else {
             echo "ERROR :" . $res;
         }
 
-        echo "Updated";
+        echo "Updated.\n";
     }
 }
 
