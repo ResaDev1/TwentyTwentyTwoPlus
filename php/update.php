@@ -182,7 +182,9 @@ class GithubApi {
 
     /**
      * Get latest release and download asset
-     * @param assetIndex
+     * @param int $assetIndex
+     * @param int $sizeLimit
+     * @return AssetFile
      * @since 0.1.0
      */
     public function get_latest_release_asset(int $assetIndex, int $sizeLimit): AssetFile {
