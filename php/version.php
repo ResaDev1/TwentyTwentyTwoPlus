@@ -1,5 +1,5 @@
 <?php
 
-const PLUGIN_VERSION = "0.1.3-stable001";
+const PLUGIN_VERSION = "0.1.3-stable002";
 
 ?>
