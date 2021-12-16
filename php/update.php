@@ -256,13 +256,20 @@ class Update {
 
     /**
      * Download version and extract zip to plugin dir
-     * @since 0.1.0
+     * @since 0.1.4
      */
     public function upgrade(): void {
+        global $dir; // Plugin dir
+
+        // Get current plugin folder name
+        // Split DIR var. example url -> localhost:8080/addr/addr/[PLUGIN_NAME]
+        $folder_dir = preg_split("#/#", $dir);
+        $folder_dir_len = count($folder_dir) - 1;
+        $result_folder = $folder_dir[$folder_dir_len];
+
         $asset = $this->api->get_latest_release_asset(0, megabyteToByte(ASSET_FILE_SIZE_LIMIT));
 
-        $newFilePath = ABSPATH . "./wp-content/plugins/TwentyTwentyTwoPlus/tttp.zip";
-        $pluginPath = ABSPATH . "./wp-content/plugins/TwentyTwentyTwoPlus/";
+        $newFilePath = ABSPATH . "./wp-content/plugins/$result_folder/tttp.zip";
 
         $file = $asset->download($newFilePath);
 
@@ -272,9 +279,9 @@ class Update {
 
         if ($res === TRUE) {
             echo "Zip file opened.";
-            $zip->extractTo($pluginPath);
+            $zip->extractTo($dir);
             echo "Zip file extracted.";
-            $zip->extractTo($pluginPath);
+            $zip->extractTo($dir);
             $zip->close();
         }
         else {
