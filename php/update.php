@@ -269,6 +269,7 @@ class Update {
 
         $asset = $this->api->get_latest_release_asset(0, megabyteToByte(ASSET_FILE_SIZE_LIMIT));
 
+        // Bug fixed : https://github.com/Asfris/TwentyTwentyTwoPlus/issues/23
         $newFilePath = ABSPATH . "wp-content/plugins/" . $result_folder . "/tttp.zip";
         $pluginPath  = ABSPATH . "wp-content/plugins/" . $result_folder;
 
