@@ -4,7 +4,9 @@ const ASSET_FILE_SIZE_LIMIT = 2; // AS MEGABYTE
 
 /**
  * Covert mb to bytes
- * @return void
+ * @param int $mb
+ * @return int
+ * @since 0.1.3
  */
 function megabyteToByte(int $mb): int {
     return $mb * 1000000;
