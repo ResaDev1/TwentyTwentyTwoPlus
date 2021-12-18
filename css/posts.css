@@ -38,6 +38,18 @@ body .wp-site-blocks main ul li div h2 {
     margin-top: 0 !important;
 }
 
+.entry-content.wp-block-post-content p.has-text-align-center {
+    text-align: center !important;
+}
+
+.entry-content.wp-block-post-content p.has-text-align-right {
+    text-align: right !important;
+}
+
+.entry-content.wp-block-post-content p.has-text-align-left {
+    text-align: left !important;
+}
+
 .post-template-default .entry-content.wp-block-post-content img {
     max-width: 100% !important;
 }
@@ -48,7 +60,7 @@ body .wp-site-blocks main ul li div h2 {
 
 .post-template-default .entry-content.wp-block-post-content * {
     max-width: 1000px !important;
-    margin-bottom: 1rem;
+    margin-bottom: 0.7rem;
 }
 
 body .wp-site-blocks main ul li div .wp-block-columns {

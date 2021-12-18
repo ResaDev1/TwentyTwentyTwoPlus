@@ -332,6 +332,11 @@ span.select2-dropdown {
     border-width: 4px !important;
 }
 
+figcaption {
+    color: var(--wp--preset--color--foreground) !important;
+    opacity: 0.8;
+}
+
 /*
     Custom classes
 */
